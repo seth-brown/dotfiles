@@ -1,0 +1,25 @@
+# https://www.prestonlamb.com/blog/creating-a-docker-image-with-github-actions
+
+name: Arch Linux Build Status 
+
+on: [push]
+
+jobs:
+  github:
+    runs-on: ubuntu-latest    
+    steps:
+      # checkout our code to use for the build
+      - uses: actions/checkout@v1
+      # login to the Docker Hub Registry
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: Build the tagged Docker image
+        run: docker build . --file Dockerfile --tag sethbrown/dotfiles
+      - name: Push the tagged Docker image
+        run: docker push sethbrown/dotfiles
+      - name: Build the latest Docker image
+        run: docker build . --file Dockerfile --tag sethbrown/dotfiles:latest
+      - name: Push the latest Docker image
+        run: docker push sethbrown/dotfiles:latest
+
+

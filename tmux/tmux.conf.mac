@@ -1,0 +1,11 @@
+# copy mode
+# Use vim keybindings in copy mode
+# http://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting/
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+setw -g mode-keys vi
+bind P paste-buffer
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection
+bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+bind-key -T copy-mode-vi q send-keys -X cancel
+

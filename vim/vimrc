@@ -1,0 +1,329 @@
+call plug#begin()
+
+" Base functionality
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'simnalamburt/vim-mundo'
+Plug 'kshenoy/vim-signature'
+Plug 'terryma/vim-expand-region'
+Plug 'itchyny/lightline.vim'
+
+" Co
+Plug 'Valloric/YouCompleteMe'
+Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'
+Plug 'SirVer/ultisnips'
+
+" Sech
+Plug 'junegunn/fzf.vim'
+
+" Aehetics
+Plug 'sickill/vim-monokai'
+Plug 'sheerun/vim-polyglot'
+
+call plug#end()
+
+" //////////////////////////  base functionality ////////////////////////////
+let mapleader = ","                                                             " remap leader to comma
+filetype on                                                                     " try to detect filetypes
+filetype plugin indent on                                                       " attempt to properly indent
+set shortmess=atI                                                               " skip intro message
+set modifiable                                                                  " make buffers modifiable
+set visualbell                                                                  " no sounds
+set noerrorbells                                                                " no sounds, ever. really.
+set laststatus=2                                                                " always show a status line
+set ruler                                                                       " show line and column numbers
+set nocursorline                                                                " disable cursor line for speed
+set backspace=indent,eol,start                                                  " allow backspace to delete as nature intended
+set autoindent                                                                  " smart indent
+set copyindent                                                                  " copy the previous indent when autoindenting
+set complete-=i                                                                 " don't scan files
+set listchars=tab:▸\ ,eol:¬                                                     " textmate-style tabstops/EOLs
+set autochdir                                                                   " set the path to the active buffer
+set fileformats+=mac                                                            " use cr terminators if mac
+set showmatch                                                                   " show matching delimiters
+set ttyfast                                                                     " we always have a fast terminal connection
+set nostartofline                                                               " don't reset cursor to start of line when moving
+set hidden                                                                      " hide unsaved buffers rather than closing them
+set nofoldenable                                                                " no folding
+set scrolloff=3                                                                 " scroll 3 lines before the horizontal window border
+set wildmenu                                                                    " enhanced line completion
+set clipboard=unnamedplus                                                           " for tmux c & p
+set showcmd
+set nospell
+set backup
+set noswapfile
+set undofile                                                                    " turn persistant undo on
+set undodir=~/.local/share/nvim/undo//                                          " persistant undo: persist undo history on files closes
+set backupdir=~/.local/share/nvim/backup//
+set directory=~/.local/share/nvim/swap//
+set expandtab                                                                   " insert space characters whenever the tab
+set shiftwidth=4                                                                " number of spaces to use for autoindenting
+set shiftround                                                                  " move in multiples of shiftwidth with < and >
+set tabstop=4
+set softtabstop=4
+set smarttab                                                                    " insert tabs at ^ using shiftwidth, not tabstop
+set autoread                                                                    " used for JS linter, standard
+set rtp+=/usr/local/opt/fzf                                                     " for fzf searching in vim
+
+" make it rain italics
+highlight Comment cterm=italic gui=italic
+set t_ZH=[3m
+set t_ZR=[23m
+
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+" change the default search styling
+hi Search ctermfg=White ctermbg=Red cterm=underline
+
+" show rel && abs line numbers
+if exists("&relativenumber")
+    set relativenumber
+    set number
+    au BufReadPost * set relativenumber
+endif
+
+" Remember everything
+if &history < 1000
+    set history=1000
+    set undolevels=1000
+endif
+
+" persistant cursor: reopen a file at the last position
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
+" utf-8 all the things
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+endif
+
+" searching
+set hlsearch                                                                    " highlight search results
+set incsearch                                                                   " show search matches as you type
+set ignorecase                                                                  " ignore case when searching
+set smartcase                                                                   " ignore case if search pattern is lowercase
+
+" clear highlight results
+if maparg('<C-L>', 'n') ==# ''
+    nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+" ////////////////////////////////  Mappings /////////////////////////////////
+
+" cycle through buffers
+nnoremap <C-j> :bnext<CR>
+nnoremap <C-k> :bprevious<CR>
+
+" toggle hidden characters visible/hidden
+nmap <leader>sl :set list!<CR>
+
+" swords to ploughshares tabs → spaces
+nnoremap <leader>ts :call ToSpaces()<CR>
+
+" format with par
+nnoremap <leader>fmt :call Fmt()<CR>
+
+" strip trailing white space
+nnoremap <leader>ws :call <SID>StripTrailingWhitespaces()<CR>
+
+" Markdown-style <h1>
+nnoremap <buffer> <leader>1 yypVr=
+
+" Markdown-style <h2>
+nnoremap <buffer> <leader>2 yypVr-
+
+" Markdown-style <h3>
+nnoremap <buffer> <leader>3 I### <ESC>
+
+" joining lines, but keep cursor stationary
+nnoremap J mzJ`z
+
+" split line (undo join)
+nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
+
+" no cursor jump on start searches
+nnoremap * *``
+
+" paste/no paste to maintain/undo formatting
+nmap <leader>tp :set paste!<CR>
+
+" visual block movements
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" select the entire buffer contents
+nnoremap vaa ggvGg_
+nnoremap Vaa ggVG
+
+" reselect the last visual block
+noremap gV `[v`]
+
+" yank all the entire buffer into the z register
+nnoremap <leader>ya ggvG$"zy
+
+" " Toggle spell checking on and of
+nmap <silent> <leader>s :set spell!<CR>
+
+" toggle spelling
+nnoremap <leader>s :set invspell<CR>
+
+nmap <leader>vrc :find ~/dotfiles/vim/vimrc<CR>
+nmap <leader>zrc :find ~/dotfiles/zsh/zshrc<CR>
+nmap <leader>trc :find ~/dotfiles/tmux/tmux.conf<CR>
+
+" Use yajl to beautify or minify json
+" https://lloyd.github.io/yajl/
+nnoremap <leader>bj :call BeautifyJson()<CR>
+vnoremap <leader>bj :call BeautifyJson()<CR>
+
+" paste lines from unnamed register and fix indentation
+nmap <leader>p pV`]=
+nmap <leader>P PV`]=
+
+" toggle gitgutter on/off
+nmap \g :GitGutterToggle<CR>
+
+" toggle writing (prose) mode on/off
+nmap \z :WordProcessorMode<CR>
+
+" //////////////////////////// File Triggers /////////////////////////////////
+
+" set indent to 2 spaces
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
+
+au BufNewFile,BufReadPost *.tsx set filetype=typescript
+autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab
+
+"Syntax highlighting in Markdown
+au BufNewFile,BufReadPost *.md set filetype=markdown
+
+" ////////////////////////////// Functions ///////////////////////////////////
+function! ToSpaces()
+    :set et|retab
+endfunction
+
+function! Fmt()
+    :set formatprg=par\ -w75j
+endfunction
+
+" vimcast's strip trailing white spaces
+function! <SID>StripTrailingWhitespaces()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+function! BeautifyJson()
+    :%! jq
+endfunction
+
+function! ReplaceM()
+    :%s//\r/g
+endfunction
+
+function! RemoveM()
+    :%s///g
+endfunction
+
+function! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  map j gj
+  map k gk
+  setlocal spell spelllang=en_us
+  set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
+  set complete+=s
+  set formatprg=par
+  setlocal wrap
+  setlocal linebreak
+endfunction
+command! WordProcessorMode call WordProcessorMode()
+
+" //////////////////////////////// Plugin Configs ///////////////////////////////////
+
+" You Complete Me
+let g:ycm_server_log_level = 'critical'                             " only show critical debuggin
+
+" UltiSnips triggering
+" When highlighting a snippet in YCM's completion menu 
+" hit <CTRL-j> to trigger it and <CTRL-j>/<CTRL-k> to jump around.
+let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+let g:UltiSnipsSnippetDirectories=["~/.snippets"]
+
+" fzf
+" find file in the current dir (recursive)
+nnoremap <silent> <leader>f :FZF<CR>
+" find file in $HOME
+nnoremap <silent> <leader>F :FZF ~<CR>
+" find file in recent history
+nnoremap <silent> <leader>h :History<CR>
+
+" vim-polyglot
+" turn off spacing error highlighting
+let g:python_highlight_space_errors = 0
+
+" ale
+" only invoked ale whenever the file is saved.
+let g:ale_set_highlights = 0
+" prevent ALE from running when a file is first opened
+let g:ale_lint_on_enter=0
+let g:ale_sign_error='●'
+let g:ale_sign_warning='.'
+let g:ale_linters = {
+    \ 'javascript': ['eslint'],
+    \ 'typescript': ['eslint'],
+    \ 'python': ['flake8'],
+    \ 'bash': ['shellcheck']
+    \ }
+let g:ale_javascript_eslint_executable='npx eslint'
+
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+highlight clear SignColumn
+
+" Lightline
+let g:lightline = {
+\ 'colorscheme': 'wombat',
+\ 'active': {
+\   'left': [['mode', 'paste'], ['filename', 'modified']],
+\   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+\ },
+\   'component_type': {
+\   'readonly': 'error',
+\   'linter_warnings': 'warning',
+\   'linter_errors': 'error'
+\ },
+\ }
+
+" GitGutter
+let g:gitgutter_enabled = 0
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+
+" open Mundo
+nnoremap <leader>g :MundoToggle<CR>
+
+" color specifics
+syntax on
+syntax enable
+colorscheme monokai

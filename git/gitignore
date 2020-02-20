@@ -1,0 +1,19 @@
+.vim/viminfo
+.vim/swaps/*
+.vim/undo
+.gitconfig.local
+node_modules
+
+# Folder view configuration files
+.DS_Store
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Compiled Python files
+*.pyc

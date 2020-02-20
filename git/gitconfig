@@ -1,0 +1,77 @@
+[user]
+    name = Seth Brown
+    email = software@seth-brown.net
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
+[alias]
+    s = status -s
+    st = status
+    nb = checkout -b
+    co = checkout
+    c = commit -m
+	a = add
+
+    # https://stackoverflow.com/a/5201642/1255817
+    # squah the last N commits: git squash N
+	squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+
+	# http://mislav.uniqpath.com/2013/02/merge-vs-rebase/
+	# this command rewrites only the local commits which you’re about the push.
+	push = git rebase -i @{u} && git push
+
+    # join merge: for feature branch merging, ensures there 
+    # will always be a merge commit (adds a merge commit)
+	jm = git merge --no-ff
+
+    # Avoid merge commits that result from git pull
+    pull = pull --ff-only
+    up = merge --ff-only
+
+    # grep on filename
+    f = "!git ls-files | grep -i"
+
+    # word diff
+    wdiff = diff --color-words
+	
+	# log alias
+    l = log -18 --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold) %an%Creset'
+    ll = log --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(yellow)%ad' --date=relative
+    lll = log --color=always --all --graph --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(yellow)%ad %C(blue)%an%Creset' --date=short
+
+	# stop tracking a file: git untrack my_file
+	untrack = rm --cached
+
+	# unstage file: git unstage my_file
+	unstage = git reset HEAD
+
+[color "branch"]
+    current = green
+    local = blue
+    remote = red
+
+[color "diff"]
+    meta = magenta bold
+    frag = blue
+    old = red bold
+    new = green
+
+[color "status"]
+    added = green
+    changed = red
+    untracked = yellow
+
+[pull]
+	rebase = true
+
+[credential]
+	helper = osxkeychain
+
+[color]
+	ui = true

@@ -1,0 +1,20 @@
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Source aliases
+source $HOME/.zsh/aliases.zsh
+source $HOME/.zsh/functions.zsh
+
+# Source fzf keyboard cmds: control-t (search), etc.
+[[ "$(uname -s)" == "Linux" ]] && source /usr/share/fzf/key-bindings.zsh
+[[ "$(uname -s)" == "Linux" ]] && source /usr/share/fzf/completion.zsh
+[[ "$(uname -s)" == "Darwin" ]] && source /usr/local/opt/fzf/shell/key-bindings.zsh
+[[ "$(uname -s)" == "Darwin" ]] && source /usr/local/opt/fzf/shell/completion.zsh
+
+export PATH="$HOME/bin:${PATH}"
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='--height=70% --preview="bat --style=numbers --color=always {}" --preview-window=right:60%:wrap'
