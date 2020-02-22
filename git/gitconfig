@@ -49,7 +49,7 @@
 	untrack = rm --cached
 
 	# unstage file: git unstage my_file
-	unstage = git reset HEAD
+	unstage = reset HEAD
 
 [color "branch"]
     current = green
