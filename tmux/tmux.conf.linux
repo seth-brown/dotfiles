@@ -1,0 +1,2 @@
+# https://unix.stackexchange.com/questions/348913/copy-selection-to-a-clipboard-in-tmux
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -i"
