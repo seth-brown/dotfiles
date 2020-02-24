@@ -7,19 +7,25 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-expand-region'
 Plug 'itchyny/lightline.vim'
-
-" Co
 Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 
-" Sech
+" Language support
+Plug 'sheerun/vim-polyglot'
+" Plug 'MaxMEllon/vim-jsx-pretty'
+" Plug 'styled-components/vim-styled-components'
+" Plug 'elzr/vim-json'
+" Plug 'jparise/vim-graphql'
+
+" Seach
 Plug 'junegunn/fzf.vim'
 
 " Aehetics
-Plug 'sickill/vim-monokai'
-Plug 'sheerun/vim-polyglot'
+Plug 'patstockwell/vim-monokai-tasty'
+" Plug 'sickill/vim-monokai'
+" Plug 'ErichDonGubler/vim-sublime-monokai'
 
 call plug#end()
 
@@ -48,7 +54,7 @@ set hidden                                                                      
 set nofoldenable                                                                " no folding
 set scrolloff=3                                                                 " scroll 3 lines before the horizontal window border
 set wildmenu                                                                    " enhanced line completion
-set clipboard=unnamedplus                                                           " for tmux c & p
+set clipboard=unnamedplus                                                       " for tmux c & p
 set showcmd
 set nospell
 set backup
@@ -300,18 +306,19 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 highlight clear SignColumn
 
 " Lightline
-let g:lightline = {
-\ 'colorscheme': 'wombat',
-\ 'active': {
-\   'left': [['mode', 'paste'], ['filename', 'modified']],
-\   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
-\ },
-\   'component_type': {
-\   'readonly': 'error',
-\   'linter_warnings': 'warning',
-\   'linter_errors': 'error'
-\ },
-\ }
+let g:airline_theme='monokai_tasty'
+" let g:lightline = {
+" \ 'colorscheme': 'monokai_tasty',
+" \ 'active': {
+" \   'left': [['mode', 'paste'], ['filename', 'modified']],
+" \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+" \ },
+" \   'component_type': {
+" \   'readonly': 'error',
+" \   'linter_warnings': 'warning',
+" \   'linter_errors': 'error'
+" \ },
+" \ }
 
 " GitGutter
 let g:gitgutter_enabled = 0
@@ -326,4 +333,5 @@ nnoremap <leader>g :MundoToggle<CR>
 " color specifics
 syntax on
 syntax enable
-colorscheme monokai
+let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
