@@ -6,8 +6,9 @@ alias cl='clear'
 alias ll='ls -lh'
 alias lc='ls -1'
 alias ec='exa -1'
-alias et='exa -T'
 alias eg='exa -1 --git-ignore'
+alias et='exa -T'
+alias ea='exa -al'
 alias mcm='make clean && make'
 
 # dotfiles
