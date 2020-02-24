@@ -90,6 +90,10 @@ ln -sfn $CUR_DIR/tmux/tmux.conf.mac $HOME/.tmux.conf.mac
 ln -sfn $CUR_DIR/git/gitconfig $HOME/.gitconfig
 ln -sfn $CUR_DIR/git/gitignore $HOME/.gitignore
 
+# term envs
+tic -x $CUR_DIR/tmux/xterm-256color-italic.terminfo
+tic -x $CUR_DIR/tmux/tmux-256color.terminfo
+
 # hyper
 ln -sfn $CUR_DIR/env/hyper.js $HOME/.hyper.js
 
