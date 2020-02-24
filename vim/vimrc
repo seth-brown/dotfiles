@@ -1,31 +1,25 @@
 call plug#begin()
 
-" Base functionality
+" base functionality
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'simnalamburt/vim-mundo'
 Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-expand-region'
 Plug 'itchyny/lightline.vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
+
+" language support
+Plug 'sheerun/vim-polyglot'
+Plug 'Valloric/YouCompleteMe'
 Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 
-" Language support
-Plug 'sheerun/vim-polyglot'
-" Plug 'MaxMEllon/vim-jsx-pretty'
-" Plug 'styled-components/vim-styled-components'
-" Plug 'elzr/vim-json'
-" Plug 'jparise/vim-graphql'
-
-" Seach
+" seach
 Plug 'junegunn/fzf.vim'
 
-" Aehetics
+" aesthetics
 Plug 'patstockwell/vim-monokai-tasty'
-" Plug 'sickill/vim-monokai'
-" Plug 'ErichDonGubler/vim-sublime-monokai'
 
 call plug#end()
 
