@@ -1,7 +1,7 @@
 Dotfiles
 ---------------
 
-This repo is for configuring my terminal environment and other various system settings. It is primarily targeted at macOS and Arch Linux as well as other Unix-like systems. The main toolchain uses is a modernized [Text Triumvirate](https://www.drbunsen.org/the-text-triumvirate/) integrated with contemporary unix tools like exa, bat, fzf, and ripgrep. It uses Hyper as a terminal for OS cross-compatibility and the excellent Operator Mono font with ligature support and italics thanks to [@kiliman](https://github.com/kiliman/operator-mono-lig).
+This repo is for configuring my terminal environment and other various system settings. It is primarily targeted at macOS and Arch Linux as well as other Unix-like systems. The main toolchain uses is a modernized [Text Triumvirate](https://www.drbunsen.org/the-text-triumvirate/) integrated with contemporary unix tools like exa, bat, fzf, and ripgrep. It uses Hyper as a terminal for OS cross-compatibility and the excellent [Operator Mono font](https://www.typography.com/blog/introducing-operator) with ligature support and italics thanks to [@kiliman](https://github.com/kiliman/operator-mono-lig).
 
 ![](dotfiles.jpg)
 
