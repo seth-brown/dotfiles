@@ -41,6 +41,7 @@ set complete-=i                                                                 
 set listchars=tab:▸\ ,eol:¬                                                     " textmate-style tabstops/EOLs
 set autochdir                                                                   " set the path to the active buffer
 set fileformats+=mac                                                            " use cr terminators if mac
+set formatprg=par\ -w75j                                                        " format text to 75 chars lines
 set showmatch                                                                   " show matching delimiters
 set ttyfast                                                                     " we always have a fast terminal connection
 set nostartofline                                                               " don't reset cursor to start of line when moving
@@ -132,9 +133,6 @@ nmap <leader>sl :set list!<CR>
 " swords to ploughshares tabs → spaces
 nnoremap <leader>ts :call ToSpaces()<CR>
 
-" format with par
-nnoremap <leader>fmt :call Fmt()<CR>
-
 " strip trailing white space
 nnoremap <leader>ws :call <SID>StripTrailingWhitespaces()<CR>
 
@@ -195,9 +193,6 @@ nmap <leader>P PV`]=
 " toggle gitgutter on/off
 nmap \g :GitGutterToggle<CR>
 
-" toggle writing (prose) mode on/off
-nmap \z :WordProcessorMode<CR>
-
 " //////////////////////////// File Triggers /////////////////////////////////
 
 " set indent to 2 spaces
@@ -212,10 +207,6 @@ au BufNewFile,BufReadPost *.md set filetype=markdown
 " ////////////////////////////// Functions ///////////////////////////////////
 function! ToSpaces()
     :set et|retab
-endfunction
-
-function! Fmt()
-    :set formatprg=par\ -w75j
 endfunction
 
 " vimcast's strip trailing white spaces
@@ -247,7 +238,7 @@ function! WordProcessorMode()
   map j gj
   map k gk
   setlocal spell spelllang=en_us
-  set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
+  " set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
   set complete+=s
   set formatprg=par
   setlocal wrap
