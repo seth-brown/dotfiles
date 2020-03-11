@@ -260,11 +260,13 @@ let g:UltiSnipsSnippetDirectories=["~/.snippets"]
 
 " fzf
 " find file in the current dir (recursive)
-nnoremap <silent> <leader>f :FZF<CR>
+nnoremap <silent> <leader>f :Files<CR>
 " find file in $HOME
-nnoremap <silent> <leader>F :FZF ~<CR>
+nnoremap <silent> <leader>F :All<CR>
 " find file in recent history
 nnoremap <silent> <leader>h :History<CR>
+command! -bang -nargs=*  All
+  \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi' }))
 
 " vim-polyglot
 " turn off spacing error highlighting
