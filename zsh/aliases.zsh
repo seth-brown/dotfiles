@@ -24,6 +24,7 @@ alias vf='vim $(fzfi)'
 # git 
 alias g=git
 
+# tmux
 alias tns='tmux new -s'
 alias tat='tmux attach -t'
 alias tks='tmux kill-session -t'
