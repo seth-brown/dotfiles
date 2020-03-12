@@ -34,3 +34,7 @@ alias tls='tmux ls'
 type docker >/dev/null 2>&1 && alias dl="docker ps -a"
 type docker >/dev/null 2>&1 && alias dk="docker rm $(docker ps -a -q)"
 type docker >/dev/null 2>&1 && alias dr="docker rmi $(docker images | grep '^<none>' | awk '{print $3}')"
+
+# if homebrew is installed
+type brew >/dev/null 2>&1 && alias brewer='brew update && brew upgrade && brew cleanup && brew doctor'
+
