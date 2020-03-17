@@ -10,6 +10,7 @@ alias eg='exa -1 --git-ignore'
 alias et='exa -T'
 alias ea='exa -al'
 alias mcm='make clean && make'
+alias rwget='wget -mkEpnp'
 
 # dotfiles
 alias zrc="vim $HOME/dotfiles/zsh/zshrc"
