@@ -31,10 +31,10 @@ alias tat='tmux attach -t'
 alias tks='tmux kill-session -t'
 alias tls='tmux ls'
 
-# if docker is installed, add these alias
+# list images
 type docker >/dev/null 2>&1 && alias dl="docker ps -a"
-type docker >/dev/null 2>&1 && alias dk="docker rm $(docker ps -a -q)"
-type docker >/dev/null 2>&1 && alias dr="docker rmi $(docker images | grep '^<none>' | awk '{print $3}')"
+# remove all containers and images 
+type docker >/dev/null 2>&1 && alias drm="docker rm -vf $(docker ps -a -q) && docker rmi -f $(docker images -a -q)"
 
 # if homebrew is installed
 type brew >/dev/null 2>&1 && alias brewer='brew update && brew upgrade && brew cleanup && brew doctor'
