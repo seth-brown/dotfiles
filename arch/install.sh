@@ -67,6 +67,11 @@ ln -sfn $CUR_DIR/zsh/functions.zsh ~/.zsh/functions.zsh
 ln -sfn $CUR_DIR/zsh/zpreztorc ~/.zpreztorc
 ln -sfn $CUR_DIR/zsh/prompt_sbrown_setup ~/.zprezto/modules/prompt/functions/prompt_sbrown_setup
 
+# these 2 lines prevent python package build problems by uninstalling and then
+# reinstalling pip
+rm -rf /usr/lib/python3.?/site-packages/pip
+pacman -Syu --noconfirm python-pip
+
 pip install --user --upgrade neovim flake8
 npm install typescript
 
