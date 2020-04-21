@@ -186,6 +186,8 @@ nmap <leader>trc :find ~/dotfiles/tmux/tmux.conf<CR>
 nnoremap <leader>bj :call BeautifyJson()<CR>
 vnoremap <leader>bj :call BeautifyJson()<CR>
 
+nnoremap <leader>er :YcmShowDetailedDiagnostic<CR>
+
 " paste lines from unnamed register and fix indentation
 nmap <leader>p pV`]=
 nmap <leader>P PV`]=
@@ -249,6 +251,7 @@ command! WordProcessorMode call WordProcessorMode()
 
 " You Complete Me
 let g:ycm_server_log_level = 'critical'                             " only show critical debuggin
+" nnoremap <leader>e :YcmShowDetailedDiagnostic<CR>          
 
 " UltiSnips triggering
 " When highlighting a snippet in YCM's completion menu 
