@@ -16,6 +16,7 @@ source $HOME/.zsh/functions.zsh
 export PATH="$HOME/bin:${PATH}"
 # needed by homebrew for some package executables
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.node/bin:$PATH"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
