@@ -33,7 +33,7 @@ PACKAGES="zsh \
 # install homebrewa and deps
 # cmake macvim eslint nvm node may also be needed, but crash the test build
 sudo chown -R $(whoami) $(brew --prefix)/*
-CI=1 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update || brew update
 brew upgrade
 brew install $PACKAGES
