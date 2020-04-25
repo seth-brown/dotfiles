@@ -74,6 +74,7 @@ pacman -Syu --noconfirm python-pip
 
 pip install --user --upgrade neovim flake8
 npm install typescript
+npm install formd
 
 # vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \

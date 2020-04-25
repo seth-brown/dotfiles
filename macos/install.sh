@@ -68,6 +68,7 @@ ln -sfn $CUR_DIR/zsh/prompt_sbrown_setup ~/.zprezto/modules/prompt/functions/pro
 
 pip3 install --user --upgrade neovim flake8
 npm install typescript
+npm install formd
 
 # vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
