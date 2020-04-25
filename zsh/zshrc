@@ -14,7 +14,8 @@ source $HOME/.zsh/functions.zsh
 [[ "$(uname -s)" == "Darwin" ]] && source /usr/local/opt/fzf/shell/completion.zsh
 
 export PATH="$HOME/bin:${PATH}"
-export PATH="$HOME/bin/describe:${PATH}"
+# needed by homebrew for some package executables
+export PATH="/usr/local/sbin:$PATH"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
