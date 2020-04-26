@@ -266,7 +266,13 @@ endfunction
 " formd mappings 
 nmap <leader>fr :call Formd("-r")<CR>
 nmap <leader>fi :call Formd("-i")<CR>
+
 " //////////////////////////////// Plugin Configs ///////////////////////////////////
+
+" Markdown
+let g:vim_markdown_math = 1                                         " highlight math in markdown
+let g:vim_markdown_frontmatter = 1                                  " highlight YAML frontmatter
+let vim_markdown_no_extensions_in_markdown = 1                      " do not require .md extensions 
 
 " You Complete Me
 let g:ycm_server_log_level = 'critical'                             " only show critical debuggin
