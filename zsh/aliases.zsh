@@ -2,6 +2,7 @@
 alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}" | fzf'
 
 # basic unix
+alias rm="nocorrect rm"
 alias cl='clear'
 alias ll='ls -lh'
 alias lc='ls -1'
