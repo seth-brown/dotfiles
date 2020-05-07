@@ -73,8 +73,7 @@ rm -rf /usr/lib/python3.?/site-packages/pip
 pacman -Syu --noconfirm python-pip
 
 pip install --user --upgrade neovim flake8
-npm install typescript
-npm install formd
+npm install -g @seth-brown/formd
 
 # vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
