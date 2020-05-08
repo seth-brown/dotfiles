@@ -12,6 +12,5 @@ set -o xtrace
 
 CUR_DIR=$(pwd -P)
 
-
-./macos/install.sh
-./macos/macos.sh
+./os/macos/install.sh
+./os/macos/macos.sh

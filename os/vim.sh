@@ -10,5 +10,8 @@ set -o nounset
 # prints every expression before executing it
 set -o xtrace
 
-CUR_DIR=$(pwd -P)
-./os/arch/install.sh
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# install neovim plugins
+nvim +silent +PlugInstall +qall

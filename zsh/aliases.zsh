@@ -4,12 +4,7 @@ alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git
 # basic unix
 alias rm="nocorrect rm"
 alias cl='clear'
-alias ll='ls -lh'
-alias lc='ls -1'
-alias ec='exa -1'
-alias eg='exa -1 --git-ignore'
-alias et='exa -T'
-alias ea='exa -al'
+alias lc=lc
 alias mcm='make clean && make'
 alias rwget='wget -mkEpnp'
 
@@ -23,6 +18,8 @@ alias vim='nvim'
 alias v='vim'
 alias vf='vim $(fzfi)'
 
+# search
+
 # git 
 alias g=git
 
@@ -35,8 +32,17 @@ alias tls='tmux ls'
 # list images
 type docker >/dev/null 2>&1 && alias dl="docker ps -a"
 # remove all containers and images 
-type docker >/dev/null 2>&1 && alias drm="docker rm -vf $(docker ps -a -q) && docker rmi -f $(docker images -a -q)"
+type docker >/dev/null 2>&1 && alias drm="docker system prune -a"
 
 # if homebrew is installed
 type brew >/dev/null 2>&1 && alias brewer='brew update && brew upgrade && brew cleanup && brew doctor'
 
+
+# use exa if installed
+function lc() {
+    if hash exa 2>/dev/null; then
+        exa -1 --git-ignore
+    else 
+        ls -1
+    fi
+}

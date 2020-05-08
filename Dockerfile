@@ -7,13 +7,12 @@ WORKDIR /root
 
 RUN mkdir ./dotfiles
 COPY bin ./dotfiles/bin
+COPY os ./dotfiles/os
 COPY env ./dotfiles/env
-COPY arch ./dotfiles/arch
 COPY git ./dotfiles/git
 COPY zsh ./dotfiles/zsh
 COPY vim ./dotfiles/vim
 COPY tmux ./dotfiles/tmux
 
 RUN cd ./dotfiles && ./bin/archlinux-install.sh
-# CMD ["echo", "build passed!"]
 CMD ["zsh"]

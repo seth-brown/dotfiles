@@ -4,7 +4,7 @@
 
 [core]
 	editor = nvim
-    excludesfile = ~/.gitignore
+	excludesfile = /Users/sbrown/.gitignore_global
 
 [pager]
 	diff = diff-so-fancy | less --tabs=4 -RFX
@@ -53,6 +53,7 @@
 
 	# unstage file: git unstage my_file
 	unstage = reset HEAD
+	amend = commit --amend --no-edit
 
 [color "branch"]
     current = green
@@ -78,3 +79,6 @@
 
 [color]
 	ui = true
+
+[push]
+	followTags = true

@@ -11,8 +11,8 @@ Dotfiles can be installed with the following commands for Arch Linux or MacOS, r
 
 | OS     | Status | Snippet                                                |
 |--------|--------|--------------------------------------------------------|
-| Arch Linux | ![Arch Build Status](https://github.com/drbunsen/dotfiles/workflows/Arch%20Linux%20Build%20Status/badge.svg) | `./arch/install.sh` |
-| MacOS      | ![MacOS Build Status](https://github.com/drbunsen/dotfiles/workflows/MacOS%20Build%20Status/badge.svg) | `./macos/install.sh` |
+| Arch Linux | ![Arch Build Status](https://github.com/drbunsen/dotfiles/workflows/Arch%20Linux%20Build%20Status/badge.svg) | `./os/arch/install.sh` |
+| MacOS      | ![MacOS Build Status](https://github.com/drbunsen/dotfiles/workflows/MacOS%20Build%20Status/badge.svg) | `./os/macos/install.sh` |
 
 
 ## Test with Docker
