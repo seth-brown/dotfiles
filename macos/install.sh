@@ -27,12 +27,12 @@ PACKAGES="zsh \
           python3 \
           flake8 \
           neovim \
+          node \
           tmux \
+          cmake \
           reattach-to-user-namespace"
 
 # install homebrewa and deps
-# cmake macvim eslint nvm node may also be needed, but crash the test build
-sudo chown -R $(whoami) $(brew --prefix)/*
 CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update || brew update
 brew upgrade
@@ -40,7 +40,7 @@ brew install $PACKAGES
 brew cask install hyper
 
 # make
-mkdir -p $HOME/{.zsh,.logs,.tmux,node}
+mkdir -p $HOME/{.zsh,.logs,.tmux}
 mkdir -p $HOME/.config/nvim/
 mkdir -p $HOME/.local/share/nvim/site/autoload/
 mkdir -p $HOME/.local/share/nvim/{undo,backup,swap}
