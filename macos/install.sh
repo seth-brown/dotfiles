@@ -37,7 +37,7 @@ CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/insta
 brew update || brew update
 brew upgrade
 brew install $PACKAGES
-brew cask install hyper
+brew cask install hyper amethyst
 
 # make
 mkdir -p $HOME/{.zsh,.logs,.tmux}
