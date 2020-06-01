@@ -20,12 +20,13 @@ PACKAGES="zsh \
           exa \
           fzf \
           git \
+          readline \
+          xz \
           diff-so-fancy \
           ripgrep \
           neofetch \
-          python3 \
-          flake8 \
           neovim \
+          python \
           tmux \
           cmake \
           reattach-to-user-namespace"
@@ -38,18 +39,14 @@ brew install $PACKAGES
 brew cask install hyper amethyst
 
 $SHELL $CUR_DIR/os/base.sh
-
-# python
-pip3 install --user --upgrade neovim flake8
-
-# install nodejs
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-source $HOME/.nvm/nvm.sh
-nvm install node
-npm install -g @seth-brown/formd
-
 $SHELL $CUR_DIR/os/symlinks.sh
-$SHELL $CUR_DIR/os/vim.sh
+$SHELL $CUR_DIR/os/python.sh
+$SHELL $CUR_DIR/os/node.sh
 
-# compile YouCompleteMe for vim
-python3 $HOME/.config/nvim/plugged/YouCompleteMe/install.py --clang-completer --ts-completer --system-libclang
+# # install nodejs
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+# source $HOME/.nvm/nvm.sh
+# nvm install node
+# npm install -g @seth-brown/formd
+
+$SHELL $CUR_DIR/os/vim.sh

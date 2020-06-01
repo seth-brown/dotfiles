@@ -15,3 +15,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # install neovim plugins
 nvim +silent +PlugInstall +qall
+
+# compile YouCompleteMe for vim
+python3 $HOME/.config/nvim/plugged/YouCompleteMe/install.py \
+    --clang-completer --ts-completer --system-libclang

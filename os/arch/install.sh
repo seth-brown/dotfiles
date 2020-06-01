@@ -17,6 +17,18 @@ pacman -Sy --noconfirm \
     git \
     zsh \
     fzf \
+    base-devel \
+    openssl \
+    zlib \
+    bzip2 \
+    readline \
+    sqlite curl \
+    llvm \
+    ncurses \
+    xz \
+    tk \
+    libffi \
+    python-pyopenssl \
     shellcheck \
     diff-so-fancy \
     ripgrep \
@@ -26,7 +38,6 @@ pacman -Sy --noconfirm \
     neofetch \
     tmux \
     neovim \
-    nodejs \
     npm \
     eslint \
     flake8 \
@@ -40,17 +51,10 @@ pacman -Sy --noconfirm \
     python-pip 
 
 $SHELL $CUR_DIR/os/base.sh
-
-# these lines prevent python package build 
-# problems by uninstalling and then
-rm -rf /usr/lib/python3.?/site-packages/pip
-pacman -Syu --noconfirm python-pip
-pip install --user --upgrade neovim flake8
-
-npm install -g @seth-brown/formd
-
 $SHELL $CUR_DIR/os/symlinks.sh
-$SHELL $CUR_DIR/os/vim.sh
+$SHELL $CUR_DIR/os/python.sh
+$SHELL $CUR_DIR/os/node.sh
 
-# compile YouCompleteMe for vim
-python $HOME/.config/nvim/plugged/YouCompleteMe/install.py --clang-completer --ts-completer --system-libclang
+# npm install -g @seth-brown/formd
+
+$SHELL $CUR_DIR/os/vim.sh
