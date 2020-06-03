@@ -17,3 +17,6 @@ Thumbs.db
 
 # Compiled Python files
 *.pyc
+
+# tmp MS Word files
+~$*.docx
