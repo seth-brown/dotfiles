@@ -11,11 +11,18 @@ set -o nounset
 set -o xtrace
 
 rm -rf $(pyenv root)
+rm -rf ~/.pyenv
 curl https://pyenv.run | bash
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-pip install flake8 neovim
+# PIP="pip"
+# if ! type "$PIP" > /dev/null; then
+#     PIP="pip3"
+# fi
+
+# https://github.com/neovim/neovim/wiki/Following-HEAD#20181118
+python3 -m pip install flake8 pynvim
 
 # poetry
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3

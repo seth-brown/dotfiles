@@ -37,6 +37,8 @@ brew update || brew update
 brew upgrade
 brew install $PACKAGES
 brew cask install hyper amethyst
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
 
 $SHELL $CUR_DIR/os/base.sh
 $SHELL $CUR_DIR/os/symlinks.sh
