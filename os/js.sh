@@ -10,5 +10,5 @@ set -o nounset
 # prints every expression before executing it
 set -o xtrace
 
-npm install -g --save-dev --save-exact prettier
-npm install -g --save-dev eslint
+# npm install -g --save-dev --save-exact prettier
+# npm install -g --save-dev eslint
