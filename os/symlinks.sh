@@ -40,5 +40,9 @@ ln -sfn $CUR_DIR/tmux/tmux.conf.mac $HOME/.tmux.conf.mac
 ln -sfn $CUR_DIR/git/gitconfig $HOME/.gitconfig
 ln -sfn $CUR_DIR/git/gitignore_global $HOME/.gitignore_global
 
+# JS 
+ln -sfn $CUR_DIR/js/prettierrc.json $HOME/.prettierrc
+ln -sfn $CUR_DIR/js/eslintrc $HOME/.eslintrc
+
 # hyper
 ln -sfn $CUR_DIR/env/hyper.js $HOME/.hyper.js

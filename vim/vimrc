@@ -206,6 +206,10 @@ autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab
 "Syntax highlighting in Markdown
 au BufNewFile,BufReadPost *.md set filetype=markdown
 
+" forces vim to rescan the entire buffer when highlighting
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
 " ////////////////////////////// Functions ///////////////////////////////////
 function! ToSpaces()
     :set et|retab
@@ -321,18 +325,6 @@ highlight clear SignColumn
 
 " Lightline
 let g:airline_theme='monokai_tasty'
-" let g:lightline = {
-" \ 'colorscheme': 'monokai_tasty',
-" \ 'active': {
-" \   'left': [['mode', 'paste'], ['filename', 'modified']],
-" \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
-" \ },
-" \   'component_type': {
-" \   'readonly': 'error',
-" \   'linter_warnings': 'warning',
-" \   'linter_errors': 'error'
-" \ },
-" \ }
 
 " GitGutter
 let g:gitgutter_enabled = 0

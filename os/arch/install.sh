@@ -54,6 +54,7 @@ $SHELL $CUR_DIR/os/base.sh
 $SHELL $CUR_DIR/os/symlinks.sh
 $SHELL $CUR_DIR/os/python.sh
 $SHELL $CUR_DIR/os/node.sh
+$SHELL $CUR_DIR/os/js.sh
 
 # npm install -g @seth-brown/formd
 

@@ -12,7 +12,7 @@ set -o xtrace
 
 CUR_DIR=$(pwd -P)
 
-mkdir -p $HOME/{.zsh,.logs,.tmux}
+mkdir -p $HOME/{.zsh,.logs,.tmux,bin}
 mkdir -p $HOME/.config/nvim/
 mkdir -p $HOME/.local/share/nvim/site/autoload/
 mkdir -p $HOME/.local/share/nvim/{undo,backup,swap}
