@@ -14,4 +14,5 @@ set -o xtrace
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 source $HOME/.nvm/nvm.sh
 nvm install node
-npm install -g @seth-brown/formd
+npm install -g @seth-brown/formd eslint
+npm install -g --save-exact prettier
