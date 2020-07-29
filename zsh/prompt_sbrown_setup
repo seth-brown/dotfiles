@@ -80,7 +80,7 @@ function prompt_sbrown_setup {
   local unstaged_format="${_prompt_sbrown_colors[2]}!%f"
   local staged_format="${_prompt_sbrown_colors[5]}!%f"
   # Set editor-info parameters.
-  zstyle ':prezto:module:editor:info:keymap:primary' format '($)'
+  zstyle ':prezto:module:editor:info:keymap:primary' format 'λ>'
 
   # Set vcs_info parameters.
   zstyle ':vcs_info:*' enable bzr git hg svn
