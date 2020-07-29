@@ -5,6 +5,7 @@ alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git
 alias rm="nocorrect rm"
 alias cl='clear'
 alias lc=lc
+alias lt=lt
 alias mcm='make clean && make'
 alias rwget='wget -mkEpnp'
 
@@ -41,8 +42,17 @@ type brew >/dev/null 2>&1 && alias brewer='brew update && brew upgrade && brew c
 # use exa if installed
 function lc() {
     if hash exa 2>/dev/null; then
-        exa -1 --git-ignore
+        exa -1
     else 
         ls -1
+    fi
+}
+
+# use exa if installed
+function lt() {
+    if hash exa 2>/dev/null; then
+        exa -T
+    else 
+        ls
     fi
 }
