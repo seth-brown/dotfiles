@@ -314,10 +314,19 @@ let g:ale_sign_warning='.'
 let g:ale_linters = {
     \ 'javascript': ['eslint'],
     \ 'typescript': ['eslint'],
-    \ 'python': ['flake8'],
-    \ 'bash': ['shellcheck']
+    \ 'python': ['flake8', 'pylint'],
+    \ 'bash': ['shellcheck'],
+    \ 'zsh': ['shellcheck']
     \ }
 let g:ale_javascript_eslint_executable='npx eslint'
+
+" Fix Python files with autopep8 and yapf.
+let b:ale_fixers = {
+    \ 'python': ['black']
+    \ }
+
+" Disable warnings about trailing whitespace for Python files.
+let b:ale_warn_about_trailing_whitespace = 0
 
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
