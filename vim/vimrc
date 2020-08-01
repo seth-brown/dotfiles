@@ -322,7 +322,9 @@ let g:ale_javascript_eslint_executable='npx eslint'
 
 " Fix Python files with autopep8 and yapf.
 let b:ale_fixers = {
-    \ 'python': ['black']
+    \ 'python': ['black'],
+    \ 'typescript': ['eslint'],
+    \ 'javascript': ['eslint']
     \ }
 
 " Disable warnings about trailing whitespace for Python files.
