@@ -8,12 +8,14 @@ module.exports = {
     // or `'canary'` for less polished but more frequent updates
     updateChannel: 'stable',
 
+    webGLRenderer: false,
+
     // default font size in pixels for all tabs
     fontSize: 16,
 
     // font family with optional fallbacks
     // fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
-    fontFamily: '"Operator Mono Lig", Menlo',
+    fontFamily: '"Fira Code", Menlo',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -132,7 +134,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-materialshell", "hyper-monokai-deluxe"],
+  plugins: ["hyper-materialshell", "hyper-monokai-deluxe", "hyper-font-ligatures"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
