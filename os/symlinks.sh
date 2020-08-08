@@ -29,6 +29,7 @@ ln -sfn $CUR_DIR/zsh/prompt_sbrown_setup ~/.zprezto/modules/prompt/functions/pro
 
 # vim snippets
 ln -sfn $CUR_DIR/vim/vimrc ~/.config/nvim/init.vim
+ln -sfn $CUR_DIR/vim/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -sfn $CUR_DIR/vim/snippets $HOME/.snippets
 
 # tmux
