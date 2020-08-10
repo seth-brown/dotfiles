@@ -221,8 +221,11 @@ nmap \g :GitGutterToggle<CR>
 " set indent to 2 spaces
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
 
-au BufNewFile,BufReadPost *.tsx set filetype=typescript
-autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab
+" au BufNewFile,BufReadPost *.tsx set filetype=typescript
+" autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab
+
+autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+autocmd BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 
 "Syntax highlighting in Markdown
 au BufNewFile,BufReadPost *.md set filetype=markdown
@@ -349,36 +352,36 @@ command! -bang -nargs=*  All
 
 " vim-polyglot
 " turn off spacing error highlighting
-let g:python_highlight_space_errors = 0
+" let g:python_highlight_space_errors = 0
 
 " ale
 " only invoked ale whenever the file is saved.
-let g:ale_set_highlights = 0
+" let g:ale_set_highlights = 0
 
 " prevent ALE from running when a file is first opened
 let g:ale_lint_on_enter=0
 let g:ale_sign_error='●'
 let g:ale_sign_warning='.'
-" let g:ale_linters = {
-"     \ 'javascript': ['eslint'],
-"     \ 'typescript': ['eslint'],
-"     \ 'python': ['flake8', 'pylint'],
-"     \ 'bash': ['shellcheck'],
-"     \ 'zsh': ['shellcheck']
-"     \ }
+let g:ale_linters = {
+    \ 'javascript': ['eslint'],
+    \ 'typescript': ['eslint'],
+    \ 'python': ['flake8', 'pylint'],
+    \ 'bash': ['shellcheck'],
+    \ 'zsh': ['shellcheck']
+    \ }
 " let g:ale_javascript_eslint_executable='npx eslint'
 
 " Fix Python files with autopep8 and yapf.
-let b:ale_fixers = {
-  \ 'python': ['black'],
-  \ 'typescript': ['eslint'],
-  \ 'javascript': ['eslint']
-  \ }
+" let b:ale_fixers = {
+"   \ 'typescript': ['eslint'],
+"   \ 'javascript': ['eslint'],
+"   \ 'css': ['eslint']
+"   \ }
 
- let g:ale_fix_on_save = 1
+"  let g:ale_fix_on_save = 1
 
 " Disable warnings about trailing whitespace
-let b:ale_warn_about_trailing_whitespace = 0
+" let b:ale_warn_about_trailing_whitespace = 0
 
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
