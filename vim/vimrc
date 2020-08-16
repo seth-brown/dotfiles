@@ -216,6 +216,12 @@ nmap <leader>P PV`]=
 " toggle gitgutter on/off
 nmap \g :GitGutterToggle<CR>
 
+" COC mappings
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " //////////////////////////// File Triggers /////////////////////////////////
 
 " set indent to 2 spaces
@@ -369,16 +375,6 @@ let g:ale_linters = {
     \ 'bash': ['shellcheck'],
     \ 'zsh': ['shellcheck']
     \ }
-" let g:ale_javascript_eslint_executable='npx eslint'
-
-" Fix Python files with autopep8 and yapf.
-" let b:ale_fixers = {
-"   \ 'typescript': ['eslint'],
-"   \ 'javascript': ['eslint'],
-"   \ 'css': ['eslint']
-"   \ }
-
-"  let g:ale_fix_on_save = 1
 
 " Disable warnings about trailing whitespace
 " let b:ale_warn_about_trailing_whitespace = 0
