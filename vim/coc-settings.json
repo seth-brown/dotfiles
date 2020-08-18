@@ -1,4 +1,7 @@
 {
+  "diagnostic.errorSign": "●",
+  "diagnostic.warningSign": ".",
+  "diagnostic.infoSign": "i",
   "eslint.autoFixOnSave": true,
   "eslint.filetypes": [
     "javascript",
