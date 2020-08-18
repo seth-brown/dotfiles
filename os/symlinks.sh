@@ -21,6 +21,7 @@ ln -s "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/zshenv "${ZDOTDIR:-$HOME}/.zshenv"
 
 # setup symlinks
 ln -sfn $CUR_DIR/env/inputrc ~/.inputrc
+ln -sfn $CUR_DIR/env/eslintrc.js ~/.eslintrc.js
 ln -sfn $CUR_DIR/zsh/zshrc ~/.zshrc
 ln -sfn $CUR_DIR/zsh/aliases.zsh ~/.zsh/aliases.zsh
 ln -sfn $CUR_DIR/zsh/functions.zsh ~/.zsh/functions.zsh
