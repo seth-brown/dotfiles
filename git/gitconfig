@@ -55,6 +55,9 @@
 	unstage = reset HEAD
 	amend = commit --amend --no-edit
 
+    # use git new instead of hacking git init to get master ⟶  main branch
+	new = !git init && git symbolic-ref HEAD refs/heads/main
+
 [color "branch"]
     current = green
     local = blue
