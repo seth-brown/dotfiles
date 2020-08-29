@@ -14,9 +14,11 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "python"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
+  "python.formatting.provider": "black",
   "snippets.userSnippetsDirectory": "~/.snippets"
 }
