@@ -15,7 +15,8 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "python"
+    "python",
+    "rust"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
