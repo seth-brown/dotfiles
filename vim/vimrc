@@ -375,7 +375,8 @@ let g:ale_linters = {
     \ 'css': ['eslint'],
     \ 'python': ['flake8', 'pylint'],
     \ 'bash': ['shellcheck'],
-    \ 'zsh': ['shellcheck']
+    \ 'zsh': ['shellcheck'],
+    \ 'rust': ['rustfmt']
     \ }
 
 " Disable warnings about trailing whitespace
