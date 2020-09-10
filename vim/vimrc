@@ -339,14 +339,6 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-" UltiSnips triggering
-" When highlighting a snippet in YCM's completion menu 
-" hit <CTRL-j> to trigger it and <CTRL-j>/<CTRL-k> to jump around.
-" let g:UltiSnipsExpandTrigger = '<C-j>'
-" let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-" let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-" glet g:UltiSnipsSnippetDirectories=["~/.snippets"]
-
 " fzf
 " find file in the current dir (recursive)
 nnoremap <silent> <leader>f :Files<CR>
