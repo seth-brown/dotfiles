@@ -51,7 +51,7 @@ function lc() {
 # use exa if installed
 function lt() {
     if hash exa 2>/dev/null; then
-        exa -T
+        exa -T --level=2
     else 
         ls
     fi
