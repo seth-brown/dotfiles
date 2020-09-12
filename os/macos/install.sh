@@ -18,6 +18,7 @@ PACKAGES="zsh \
           jq \
           bat \
           exa \
+          duti \
           fzf \
           git \
           readline \
