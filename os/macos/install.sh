@@ -46,3 +46,4 @@ $SHELL $CUR_DIR/os/python.sh
 $SHELL $CUR_DIR/os/node.sh
 
 $SHELL $CUR_DIR/os/vim.sh
+$SHELL $CUR_DIR/os/macos/duti.sh
