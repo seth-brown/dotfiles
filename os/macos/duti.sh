@@ -49,6 +49,7 @@ duti -s $EDITOR .swift all
 duti -s $EDITOR .toml all
 duti -s $EDITOR .txt all
 duti -s $EDITOR .tex all
+duti -s $EDITOR .svg all
 duti -s $EDITOR .conf all
 
 duti -s com.apple.Preview pdf all
