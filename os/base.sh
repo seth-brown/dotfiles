@@ -14,6 +14,7 @@ CUR_DIR=$(pwd -P)
 
 mkdir -p $HOME/{.zsh,.logs,.tmux,bin}
 mkdir -p $HOME/.config/nvim/
+mkdir -p $HOME/.config/alacritty/
 mkdir -p $HOME/.local/share/nvim/site/autoload/
 mkdir -p $HOME/.local/share/nvim/{undo,backup,swap}
 

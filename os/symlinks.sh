@@ -48,3 +48,6 @@ ln -sfn $CUR_DIR/js/eslintrc $HOME/.eslintrc
 
 # hyper
 ln -sfn $CUR_DIR/env/hyper.js $HOME/.hyper.js
+
+# alacritty
+ln -sfn $CUR_DIR/env/alacritty.yml $HOME/.config/alacritty/alacritty.yml
