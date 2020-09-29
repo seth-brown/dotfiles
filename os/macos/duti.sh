@@ -51,5 +51,9 @@ duti -s $EDITOR .txt all
 duti -s $EDITOR .tex all
 duti -s $EDITOR .svg all
 duti -s $EDITOR .conf all
+duti -s $EDITOR .csv all
+duti -s $EDITOR .tsv all
+duti -s $EDITOR .yaml all
+duti -s $EDITOR .ini all
 
 duti -s com.apple.Preview pdf all
