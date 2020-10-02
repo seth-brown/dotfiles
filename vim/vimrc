@@ -382,6 +382,14 @@ highlight clear SignColumn
 " Lightline
 let g:airline_theme='monokai_tasty'
 
+" show file path
+" https://github.com/itchyny/lightline.vim/issues/386
+let g:lightline = {
+      \ 'component': {
+      \   'filename': '%F',
+      \ }
+      \ }
+
 " GitGutter
 let g:gitgutter_enabled = 0
 let g:gitgutter_sign_added = '∙'
