@@ -26,6 +26,8 @@ duti -s $EDITOR .css all
 duti -s $EDITOR .go all
 duti -s $EDITOR .java all
 duti -s $EDITOR .js all
+duti -s $EDITOR .ts all
+duti -s $EDITOR .tsx all
 duti -s $EDITOR .sass all
 duti -s $EDITOR .scss all
 duti -s $EDITOR .less all
