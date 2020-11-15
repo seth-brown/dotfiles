@@ -317,7 +317,11 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-snippets',
-  \ 'coc-rust-analyzer'
+  \ 'coc-rust-analyzer',
+  \ 'coc-rls',
+  \ 'coc-python',
+  \ 'coc-css',
+  \ 'coc-sql'
   \ ]
 
 nnoremap <silent> K :call CocAction('doHover')<CR>
