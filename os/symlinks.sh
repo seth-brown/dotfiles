@@ -46,6 +46,9 @@ ln -sfn $CUR_DIR/git/gitignore_global $HOME/.gitignore_global
 ln -sfn $CUR_DIR/js/prettierrc.json $HOME/.prettierrc
 ln -sfn $CUR_DIR/js/eslintrc $HOME/.eslintrc
 
+# Rust
+ln -sfn $CUR_DIR/rs/rustfmt.toml $HOME/.config/rustfmt/rustfmt.toml
+
 # hyper
 ln -sfn $CUR_DIR/env/hyper.js $HOME/.hyper.js
 
