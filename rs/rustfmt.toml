@@ -1,4 +1,4 @@
 edition = "2018"
 max_width = 79
-wrap_comments = true
 imports_layout = "HorizontalVertical"
+preserve_block_start_blank_lines = true
