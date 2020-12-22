@@ -43,13 +43,13 @@ set complete-=i                                                                 
 set listchars=tab:▸\ ,eol:¬                                                     " textmate-style tabstops/EOLs
 set autochdir                                                                   " set the path to the active buffer
 set fileformats+=mac                                                            " use cr terminators if mac
-set formatprg=par\ -w75j                                                        " format text to 75 chars lines
+set formatprg=par\ -w60j                                                        " format text to 60 chars lines
 set showmatch                                                                   " show matching delimiters
 set ttyfast                                                                     " we always have a fast terminal connection
 set nostartofline                                                               " don't reset cursor to start of line when moving
 set hidden                                                                      " hide unsaved buffers rather than closing them
 set nofoldenable                                                                " no folding
-set scrolloff=3                                                                 " scroll 3 lines before the horizontal window border
+" set foldmethod=syntax
 set wildmenu                                                                    " enhanced line completion
 set clipboard=unnamedplus                                                       " for tmux c & p
 set showcmd
@@ -403,6 +403,9 @@ let g:gitgutter_sign_modified_removed = '∙'
 
 " open Mundo
 nnoremap <leader>g :MundoToggle<CR>
+
+" folding
+nnoremap <space> za
 
 " color specifics
 syntax on
