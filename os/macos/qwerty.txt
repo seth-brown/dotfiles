@@ -1,0 +1,19 @@
+* Kinesis Adv2 
+* ------------
+
+* Setup
+* -----
+* 1. Turn on Power User Mode, "PUM" (progm + Shift + Esc)
+* 2. Opening the Advantage2 v-drive (progm + F1, PUM Required)
+* 3. Activate Mac thumb key mode (progm + F5)
+* 4. Disable key clicks (progm + F8)
+* 5. Verify config via Status Report (progm + Esc)
+
+* reference: https://kinesis-ergo.com/wp-content/uploads/Adv2-Users-Manual-01-07-19_us.pdf
+
+[kp=]>[kp=mac]
+[caps]>[lctrl]
+[home]>[rwin]
+[end]>[escape]
+[delete]>[lctrl]
+[pdown]>[tab]
