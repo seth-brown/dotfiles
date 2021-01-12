@@ -14,9 +14,9 @@ CUR_DIR=$(pwd -P)
 
 # needed by homebrew for some package executables
 export PATH="/usr/local/sbin:$PATH"
-PACKAGES="zsh"
+PACKAGES="zsh
           jq \
-          bat
+          bat"
           # exa \
           # duti \
           # fzf \
