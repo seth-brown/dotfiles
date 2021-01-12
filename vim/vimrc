@@ -11,11 +11,10 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" language support
+" language/syntax support
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
-" Plug 'SirVer/ultisnips'
 
 " seach
 Plug 'junegunn/fzf.vim'
@@ -49,7 +48,6 @@ set ttyfast                                                                     
 set nostartofline                                                               " don't reset cursor to start of line when moving
 set hidden                                                                      " hide unsaved buffers rather than closing them
 set nofoldenable                                                                " no folding
-" set foldmethod=syntax
 set wildmenu                                                                    " enhanced line completion
 set clipboard=unnamedplus                                                       " for tmux c & p
 set showcmd
@@ -147,29 +145,29 @@ endif
 
 " ////////////////////////////////  Mappings /////////////////////////////////
 
-" cycle through buffers
+" cycle through buffers like a true vim acolyte
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprevious<CR>
 
 " toggle hidden characters visible/hidden
 nmap <leader>sl :set list!<CR>
 
-" swords to ploughshares tabs → spaces
+" tabs → spaces
 nnoremap <leader>ts :call ToSpaces()<CR>
 
 " strip trailing white space
 nnoremap <leader>ws :call <SID>StripTrailingWhitespaces()<CR>
 
-" Markdown-style <h1>
+" markdown-style <h1>
 nnoremap <buffer> <leader>1 yypVr=
 
-" Markdown-style <h2>
+" markdown-style <h2>
 nnoremap <buffer> <leader>2 yypVr-
 
-" Markdown-style <h3>
+" markdown-style <h3>
 nnoremap <buffer> <leader>3 I### <ESC>
 
-" joining lines, but keep cursor stationary
+" join lines, but keep cursor stationary
 nnoremap J mzJ`z
 
 " split line (undo join)
@@ -206,7 +204,6 @@ nmap <leader>zrc :find ~/dotfiles/zsh/zshrc<CR>
 nmap <leader>trc :find ~/dotfiles/tmux/tmux.conf<CR>
 
 " Use yajl to beautify or minify json
-" https://lloyd.github.io/yajl/
 nnoremap <leader>bj :call BeautifyJson()<CR>
 vnoremap <leader>bj :call BeautifyJson()<CR>
 
@@ -214,7 +211,7 @@ vnoremap <leader>bj :call BeautifyJson()<CR>
 nmap <leader>p pV`]=
 nmap <leader>P PV`]=
 
-" toggle gitgutter on/off
+" toggle gitgutter on/off to show commit state
 nmap \g :GitGutterToggle<CR>
 
 " COC mappings
@@ -234,7 +231,7 @@ autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab
 autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
 autocmd BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 
-"Syntax highlighting in Markdown
+" syntax highlighting in Markdown
 au BufNewFile,BufReadPost *.md set filetype=markdown
 
 " forces vim to rescan the entire buffer when highlighting
@@ -283,10 +280,7 @@ endfunction
 command! WordProcessorMode call WordProcessorMode()
 
 " a function to execute formd and return the cursor back
-" to it's original position within the buffer. 
-
-" This script assumes formd is in your path at:
- 
+" to it's original position within the buffer.  
 function! Formd(option)
     :let save_view = winsaveview()
     :let flag = a:option
@@ -347,20 +341,14 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " fzf
 " find file in the current dir (recursive)
 nnoremap <silent> <leader>f :Files<CR>
+
 " find file in $HOME
 nnoremap <silent> <leader>F :All<CR>
+
 " find file in recent history
 nnoremap <silent> <leader>h :History<CR>
 command! -bang -nargs=*  All
   \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --no-ignore-vcs --glob "!{node_modules/*,.git/*}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi' }))
-
-" vim-polyglot
-" turn off spacing error highlighting
-" let g:python_highlight_space_errors = 0
-
-" ale
-" only invoked ale whenever the file is saved.
-" let g:ale_set_highlights = 0
 
 " prevent ALE from running when a file is first opened
 let g:ale_lint_on_enter=0
@@ -376,14 +364,11 @@ let g:ale_linters = {
     \ 'rust': ['rustfmt']
     \ }
 
-" Disable warnings about trailing whitespace
-" let b:ale_warn_about_trailing_whitespace = 0
-
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 highlight clear SignColumn
 
-" Lightline
+" lightline theme
 let g:airline_theme='monokai_tasty'
 
 " show file path
@@ -403,9 +388,6 @@ let g:gitgutter_sign_modified_removed = '∙'
 
 " open Mundo
 nnoremap <leader>g :MundoToggle<CR>
-
-" folding
-nnoremap <space> za
 
 " color specifics
 syntax on
