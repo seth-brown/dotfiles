@@ -19,8 +19,8 @@ PACKAGES="zsh
           bat \
           exa \
           duti \
-          fzf"
-          # git \
+          fzf \
+          git"
           # readline \
           # xz \
           # diff-so-fancy \
