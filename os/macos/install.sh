@@ -14,19 +14,19 @@ CUR_DIR=$(pwd -P)
 
 # needed by homebrew for some package executables
 export PATH="/usr/local/sbin:$PATH"
-PACKAGES="zsh \
-          jq \
-          bat \
-          exa \
-          duti \
-          fzf \
-          git \
-          readline \
-          xz \
-          diff-so-fancy \
-          ripgrep \
-          neofetch \
-          neovim"
+PACKAGES="zsh"
+          # jq"
+          # bat \
+          # exa \
+          # duti \
+          # fzf \
+          # git \
+          # readline \
+          # xz \
+          # diff-so-fancy \
+          # ripgrep \
+          # neofetch \
+          # neovim"
           # python \
           # tmux \
           # cmake \
@@ -34,8 +34,8 @@ PACKAGES="zsh \
 
 # install homebrew and deps
 CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew update || brew update
-brew upgrade
+# brew update || brew update
+brew update || brew upgrade
 brew install $PACKAGES
 # brew cask install hyper amethyst
 # brew tap homebrew/cask-fonts
