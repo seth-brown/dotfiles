@@ -20,9 +20,9 @@ PACKAGES="zsh
           exa \
           duti \
           fzf \
-          git \
-          readline \
-          xz"
+          git"
+          # readline \
+          # xz \
           # diff-so-fancy \
           # ripgrep"
           # neofetch \
