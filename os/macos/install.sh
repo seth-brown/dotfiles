@@ -22,9 +22,9 @@ PACKAGES="zsh
           fzf \
           git \
           readline \
-          xz \
-          diff-so-fancy \
-          ripgrep"
+          xz"
+          # diff-so-fancy \
+          # ripgrep"
           # neofetch \
           # neovim"
           # python \
