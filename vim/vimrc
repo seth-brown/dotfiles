@@ -21,6 +21,10 @@ Plug 'junegunn/fzf.vim'
 
 " aesthetics
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'Alok/notational-fzf-vim'
+
+let g:nv_search_paths = ['~/Library/Mobile\ Documents/com\~apple\~CloudDocs/txt']
+nnoremap <leader>e :NV<CR>
 
 call plug#end()
 

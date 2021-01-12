@@ -20,11 +20,11 @@ PACKAGES="zsh
           exa \
           duti \
           fzf \
-          git"
-          # readline \
-          # xz \
-          # diff-so-fancy \
-          # ripgrep \
+          git \
+          readline \
+          xz \
+          diff-so-fancy \
+          ripgrep"
           # neofetch \
           # neovim"
           # python \
