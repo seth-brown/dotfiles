@@ -19,14 +19,14 @@ PACKAGES="zsh
           bat \
           exa \
           duti \
-          fzf \
-          git \
-          readline \
-          xz \
-          diff-so-fancy \
-          ripgrep \
-          neofetch \
-          neovim"
+          fzf"
+          # git \
+          # readline \
+          # xz \
+          # diff-so-fancy \
+          # ripgrep \
+          # neofetch \
+          # neovim"
           # python \
           # tmux \
           # cmake \
