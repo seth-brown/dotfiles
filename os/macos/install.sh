@@ -16,17 +16,17 @@ CUR_DIR=$(pwd -P)
 export PATH="/usr/local/sbin:$PATH"
 PACKAGES="zsh
           jq \
-          bat"
-          # exa \
-          # duti \
-          # fzf \
-          # git \
-          # readline \
-          # xz \
-          # diff-so-fancy \
-          # ripgrep \
-          # neofetch \
-          # neovim"
+          bat \
+          exa \
+          duti \
+          fzf \
+          git \
+          readline \
+          xz \
+          diff-so-fancy \
+          ripgrep \
+          neofetch \
+          neovim"
           # python \
           # tmux \
           # cmake \
