@@ -20,17 +20,17 @@ PACKAGES="zsh
           exa \
           duti \
           fzf \
-          git"
-          # readline \
-          # xz \
-          # diff-so-fancy \
-          # ripgrep"
-          # neofetch \
-          # neovim"
-          # python \
-          # tmux \
-          # cmake \
-          # reattach-to-user-namespace"
+          readline \
+          xz \
+          diff-so-fancy \
+          ripgrep \
+          neofetch \
+          neovim \
+          python \
+          tmux \
+          cmake \
+          reattach-to-user-namespace"
+          # git
 
 # install homebrew and deps
 CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
