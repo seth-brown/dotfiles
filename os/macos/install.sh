@@ -22,12 +22,12 @@ PACKAGES="zsh
           fzf \
           readline \
           xz \
-          diff-so-fancy"
-          # ripgrep \
-          # neofetch \
-          # neovim \
-          # python \
-          # tmux \
+          diff-so-fancy
+          ripgrep \
+          neofetch \
+          neovim \
+          python \
+          tmux"
           # cmake \
           # reattach-to-user-namespace \
           # git"
