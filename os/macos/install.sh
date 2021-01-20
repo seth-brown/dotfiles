@@ -25,9 +25,9 @@ PACKAGES="zsh
           diff-so-fancy
           ripgrep \
           neofetch \
-          neovim \
-          python \
-          tmux"
+          neovim"
+          # python
+          # tmux
           # cmake \
           # reattach-to-user-namespace \
           # git"
