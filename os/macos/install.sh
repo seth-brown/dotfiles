@@ -23,9 +23,9 @@ PACKAGES="zsh
           readline \
           xz \
           diff-so-fancy \
-          ripgrep \
-          neofetch \
-          neovim"
+          ripgrep"
+          # neofetch
+          # neovim
           # python
           # tmux
           # cmake \
