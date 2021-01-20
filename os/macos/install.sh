@@ -22,7 +22,7 @@ PACKAGES="zsh
           fzf \
           readline \
           xz \
-          diff-so-fancy
+          diff-so-fancy \
           ripgrep \
           neofetch \
           neovim"
