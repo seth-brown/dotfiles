@@ -23,8 +23,7 @@ PACKAGES="zsh
           readline \
           xz \
           diff-so-fancy \
-          ripgrep \
-          neofetch"
+          ripgrep"
           # neovim
           # python
           # tmux
