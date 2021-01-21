@@ -23,13 +23,13 @@ PACKAGES="zsh
           readline \
           xz \
           diff-so-fancy \
-          ripgrep"
+          ripgrep \
+          python \
+          tmux \
+          cmake \
+          reattach-to-user-namespace \
+          git"
           # neovim
-          # python
-          # tmux
-          # cmake \
-          # reattach-to-user-namespace \
-          # git"
 
 # install homebrew and deps
 CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
