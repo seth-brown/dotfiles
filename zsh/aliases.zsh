@@ -19,8 +19,6 @@ alias vim='nvim'
 alias v='vim'
 alias vf='vim $(fzfi)'
 
-# search
-
 # git 
 alias g=git
 
