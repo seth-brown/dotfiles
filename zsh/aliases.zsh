@@ -30,11 +30,15 @@ alias tls='tmux ls'
 
 # list images
 type docker >/dev/null 2>&1 && alias dl="docker ps -a"
+
 # remove all containers and images 
 type docker >/dev/null 2>&1 && alias drm="docker system prune -a"
 
 # if homebrew is installed
 type brew >/dev/null 2>&1 && alias brewer='brew update && brew upgrade && brew cleanup && brew doctor'
+
+# use coreutil's date, gdate if available
+type date >/dev/null 2>&1 && alias date='gdate'
 
 # pdfmerge OUTPUT.pdf *.pdf
 PDFMERGE_PATH="/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py"
