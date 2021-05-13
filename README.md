@@ -1,7 +1,7 @@
 Dotfiles
 ---------------
 
-This repo is for configuring my terminal environment and other various system settings. It is primarily targeted at macOS and Arch Linux as well as other Unix-like systems. The main toolchain uses a set of contemporary Unix tools like exa, bat, fzf, and ripgrep. It uses Kitty as the primary terminal for OS cross-compatibility with [Operator Mono font](https://www.typography.com/blog/introducing-operator) along with [ligature support and italics](https://github.com/kiliman/operator-mono-lig) as well as [Tokyo Night](https://github.com/folke/tokyonight.nvim) for theme consistancy.
+This repo is for configuring my terminal environment and other various system and development settings. My configuration is primarily targeted at macOS and Arch Linux as well as other Unix-like systems. The main toolchain uses a set of contemporary Unix tools like exa, bat, fzf, and ripgrep. I uses Alacritty as a terminal for OS cross-compatibility and the excellent [Operator Mono font](https://www.typography.com/blog/introducing-operator) with ligature support and italics thanks to [@kiliman](https://github.com/kiliman/operator-mono-lig). Other terminals can also be used like Kitty, Hyper, or iTerm2 configured with [Tokyo Night](https://github.com/folke/tokyonight.nvim) for theme consistancy.
 
 ![](dotfiles.jpg)
 
@@ -27,7 +27,7 @@ $ ./bin/archlinux-docker-setup.sh
 
 | Package                                                      | Description                                                      |
 |--------------------------------------------------------------|------------------------------------------------------------------|
-| [kitty](https://hyper.is)                                    | cross-platform, GPU based terminal                               |
+| [Alacritty](https://github.com/alacritty/alacritty)          | Cross-platform GPU-Accelerated Terminal Emulator                 |
 | [zsh](https://github.com/zsh-users/zsh)                      | Z Shell (extended Bourne Shell)                                  |
 | [prezto](https://github.com/sorin-ionescu/prezto)            | lightweight configuration framework for Zsh                      |
 | [neovim](https://github.com/zsh-users/zsh)                   | extensible Vim-based text editor                                 |
@@ -42,4 +42,4 @@ $ ./bin/archlinux-docker-setup.sh
 
 ## Language Support
 
-Language support is minimal to keep the enviroment as light weight as possible and to allow individual customization. `lspinstall` can be used to setup any langauge servers that are needed.
+Language support is minimal to keep the enviroment as light weight as possible and to allow individual customization. [`lspinstall`](https://github.com/kabouzeid/nvim-lspinstall) is provided for easy setup of whatever language servers are needed.
