@@ -1,0 +1,84 @@
+[user]
+    name = Seth Brown
+    email = software@seth-brown.net
+
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore_global
+
+[pager]
+    diff = diff-so-fancy | less --tabs=4 -RFX
+    show = diff-so-fancy | less --tabs=4 -RFX
+
+[alias]
+    s = status -s
+    st = status
+    nb = checkout -b
+    co = checkout
+    c = commit -m
+    a = add
+
+    # join merge: for feature branch merging, ensures there 
+    # will always be a merge commit (adds a merge commit)
+    jm = git merge --no-ff
+
+    # grep on filename
+    f = "!git ls-files | grep -i"
+
+    # word diff
+    wdiff = diff --color-words
+    
+    # log alias
+    l = log -18 --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(black bold) %an%Creset'
+    ll = log --color=always --all --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(yellow)%ad' --date=relative
+    lll = log --color=always --all --graph --topo-order --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset %C(yellow)%ad %C(blue)%an%Creset' --date=short
+
+    # show commits since the start of the branch
+    ld = log --color=always --graph --decorate --abbrev-commit --pretty='format:%Cgreen%h%Creset %s%Cred%d%Creset'
+
+    # show commits in oneline (log compact)
+    # useful for inspecting history of one branch
+    lc = log --oneline
+
+    # stop tracking a file: git untrack my_file
+    untrack = rm --cached
+
+    # unstage file: git unstage my_file
+    unstage = reset HEAD
+
+    # make changes to the last commit while using the previous commit message
+    amend = commit --amend --no-edit
+
+    # use git new instead of hacking git init to get master ⟶  main branch
+    new = !git init && git symbolic-ref HEAD refs/heads/main
+
+[color "branch"]
+    current = green
+    local = blue
+    remote = red
+
+[color "diff"]
+    meta = magenta bold
+    frag = blue
+    old = red bold
+    new = green
+
+[color "status"]
+    added = green
+    changed = red
+    untracked = yellow
+
+[pull]
+    rebase = true
+
+[credential]
+    helper = osxkeychain
+
+[color]
+    ui = true
+
+[push]
+    followTags = true
+
+[init]
+    defaultBranch = main

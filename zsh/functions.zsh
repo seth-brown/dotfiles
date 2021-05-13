@@ -3,6 +3,45 @@ function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
+function mov2gif() {
+  out="$(echo $1 | sed 's/\.mov$/\.gif/')"
+  max_width="650"
+  frames_per_second="30"
+  ffmpeg -i $1 -vf "scale=min(iw\,$max_width):-1" -r "$frames_per_second" -sws_flags lanczos -f image2pipe -vcodec ppm - \
+    | convert -delay 5 -layers Optimize -loop 0 - "$out" &&
+  echo "$(tput setaf 2)output file: $out$(tput sgr 0)" &&
+  open -a Google\ Chrome $out
+}
+
+# PDF resolution can be set with -dPDFSETTINGS, e.g. -dPDFSETTINGS=/printer
+#
+# other resolution options:
+#   /screen   (73 dpi)
+#   /ebook    (150 dpi)
+#   /prepress (300 dpi)
+#   /primer   (300 dpi)
+#   /default  (300 dpi)
+function pdfmerge() {
+  gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress \ -sOutputFile="$@"
+}
+
+function lc() {
+    if hash exa 2>/dev/null; then
+        exa -1
+    else 
+        ls -1
+    fi
+}
+
+# use exa if installed
+function lt() {
+    if hash exa 2>/dev/null; then
+        exa -T --level=2
+    else 
+        ls
+    fi
+}
+
 # Determine size of a file or total size of a directory
 function fs() {
 	if du -b /dev/null > /dev/null 2>&1; then

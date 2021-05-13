@@ -39,25 +39,3 @@ type brew >/dev/null 2>&1 && alias brewer='brew update && brew upgrade && brew c
 
 # use coreutil's date, gdate if available
 type date >/dev/null 2>&1 && alias date='gdate'
-
-# pdfmerge OUTPUT.pdf *.pdf
-PDFMERGE_PATH="/System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py"
-type $PDFMERGE_PATH >/dev/null 2>&1 && alias pdfmerge='"$PDFMERGE_PATH" -o'
-
-# use exa if installed
-function lc() {
-    if hash exa 2>/dev/null; then
-        exa -1
-    else 
-        ls -1
-    fi
-}
-
-# use exa if installed
-function lt() {
-    if hash exa 2>/dev/null; then
-        exa -T --level=2
-    else 
-        ls
-    fi
-}
