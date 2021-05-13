@@ -11,7 +11,7 @@ COPY os ./dotfiles/os
 COPY env ./dotfiles/env
 COPY git ./dotfiles/git
 COPY zsh ./dotfiles/zsh
-COPY vim ./dotfiles/vim
+COPY nvim ./dotfiles/nvim
 COPY tmux ./dotfiles/tmux
 
 RUN cd ./dotfiles && ./bin/archlinux-install.sh
