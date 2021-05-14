@@ -42,6 +42,10 @@ require('packer').startup(function()
   use 'norcalli/nvim-colorizer.lua'
   use 'folke/tokyonight.nvim'
 
+  use {'hoob3rt/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+
 end)
 
 --gui
@@ -161,16 +165,16 @@ require('gitsigns').setup {
 -- )
 
 -- Snippets support
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---  vim.lsp.diagnostic.on_publish_diagnostics, {
---    -- virtual_text = {
---    --   prefix = " ", -- change this to whatever you want your diagnostic icons to be
---    -- },
---  }
--- )
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+ vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = {
+      prefix = "●", -- standard diagnostic icons (replaces the unseemly square)
+    },
+ }
+)
 
 -- signature help
 require('lsp_signature').on_attach()
@@ -200,13 +204,6 @@ require('lspkind').init({
         Struct = ''
     },
 })
-
---lspconfig + lsp trouble + lspsaga
--- require'lspconfig'.pyls.setup{}
--- require'lspconfig'.rust_analyzer.setup{}
--- require'lspconfig'.kotlin_language_server.setup{}
--- require'lspconfig'.kotlin_language_server.setup{}
--- require'lspconfig'.rust_analyzer.setup{}
 
 --lsp isntaller
 local function setup_servers()
@@ -326,3 +323,30 @@ require('telescope').setup{
 
 require('mappings')
 require('settings')
+
+require('lualine').setup{
+  options = {
+    theme = 'tokyonight',
+    section_separators = {'', ''},
+    component_separators = {'', ''},
+    disabled_filetypes = {},
+    icons_enabled = true,
+  },
+  sections = {
+    lualine_a = { {'mode', upper = true} },
+    lualine_b = { {'branch', icon = ''} },
+    lualine_c = {{'diagnostics', sources = {'nvim_lsp'}, sections = {'error', 'warn', 'info'}}},
+    lualine_x = { 'encoding', 'filetype' },
+    -- lualine_y = { 'progress' },
+    lualine_z = { 'location' },
+  },
+  inactive_sections = {
+    lualine_a = {  },
+    lualine_b = {  },
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
+    lualine_y = {  },
+    lualine_z = {  }
+  },
+  extensions = { 'fzf' }
+}

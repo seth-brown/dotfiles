@@ -32,10 +32,13 @@ utils.opt('o', "mouse", "a")                          -- allow mouse actions
 vim.o.completeopt = "menuone,noselect"                -- required for nvim-compe completion
 vim.o.shortmess = vim.o.shortmess .. "c"
 
-scopes.b.undofile = true                              -- maintain undo history between sessions
-cmd([[ set undodir=~/.local/share/nvim/undo// ]])     -- set undo dir (required for mundo)
-cmd([[ set backupdir=~/.local/share/nvim/backup// ]]) -- set backup dir
-cmd([[ set directory=~/.local/share/nvim/swap// ]])   -- set swap dir
+-- set undofile
+-- set undodir=~/.vim/undo
+-- scopes.b.undofile = true                              -- maintain undo history between sessions
+cmd([[ set undofile]])
+cmd([[ set undodir=~/.local/share/nvim/undo/ ]])     -- set undo dir (required for mundo)
+cmd([[ set backupdir=~/.local/share/nvim/backup/ ]]) -- set backup dir
+cmd([[ set directory=~/.local/share/nvim/swap/ ]])   -- set swap dir
 -- cmd([[set shortmess=atI]])                            -- skip intro message
 cmd([[set listchars=tab:▸\ ,eol:¬]])                  -- textmate-style tabstops/EOLs
 
