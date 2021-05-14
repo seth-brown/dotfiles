@@ -28,10 +28,14 @@ ln -sfn $CUR_DIR/zsh/functions.zsh ~/.zsh/functions.zsh
 ln -sfn $CUR_DIR/zsh/zpreztorc ~/.zpreztorc
 ln -sfn $CUR_DIR/zsh/prompt_sbrown_setup ~/.zprezto/modules/prompt/functions/prompt_sbrown_setup
 
-# vim snippets
-ln -sfn $CUR_DIR/vim/vimrc ~/.config/nvim/init.vim
-ln -sfn $CUR_DIR/vim/coc-settings.json ~/.config/nvim/coc-settings.json
-ln -sfn $CUR_DIR/vim/snippets $HOME/.snippets
+# terminals
+ln -sfn $CUR_DIR/env/kitty $HOME/.config/kitty
+ln -sfn $CUR_DIR/env/hyper.js $HOME/.hyper.js
+ln -sfn $CUR_DIR/env/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
+# vim
+ln -sfn $CUR_DIR/nvim ~/.config/nvim
+ln -sfn $CUR_DIR/nvim/snippets $HOME/.snippets
 
 # tmux
 ln -sfn $CUR_DIR/tmux/tmux.conf $HOME/.tmux.conf
@@ -42,15 +46,9 @@ ln -sfn $CUR_DIR/tmux/tmux.conf.mac $HOME/.tmux.conf.mac
 ln -sfn $CUR_DIR/git/gitconfig $HOME/.gitconfig
 ln -sfn $CUR_DIR/git/gitignore_global $HOME/.gitignore_global
 
-# JS 
+# JS/TS
 ln -sfn $CUR_DIR/js/prettierrc.json $HOME/.prettierrc
 ln -sfn $CUR_DIR/js/eslintrc $HOME/.eslintrc
 
 # Rust
 ln -sfn $CUR_DIR/rs/rustfmt.toml $HOME/.config/rustfmt/rustfmt.toml
-
-# hyper
-ln -sfn $CUR_DIR/env/hyper.js $HOME/.hyper.js
-
-# alacritty
-ln -sfn $CUR_DIR/env/alacritty.yml $HOME/.config/alacritty/alacritty.yml
