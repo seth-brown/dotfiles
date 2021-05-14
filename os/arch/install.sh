@@ -47,6 +47,7 @@ pacman -Sy --noconfirm \
     make \
     cmake \
     gvim \
+    kitty \
     python \
     python-pip 
 
@@ -54,5 +55,4 @@ $SHELL $CUR_DIR/os/base.sh
 $SHELL $CUR_DIR/os/symlinks.sh
 $SHELL $CUR_DIR/os/python.sh
 $SHELL $CUR_DIR/os/node.sh
-
 $SHELL $CUR_DIR/os/vim.sh

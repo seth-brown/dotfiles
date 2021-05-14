@@ -38,7 +38,9 @@ brew update
 brew upgrade
 brew install $PACKAGES
 brew tap homebrew/cask-fonts
-# brew cask install hyper amethyst font-fira-code
+
+# brew cask install hyper amethyst 
+brew install --cask kitty amethyst
 brew install font-fira-code
 
 $SHELL $CUR_DIR/os/base.sh
