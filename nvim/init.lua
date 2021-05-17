@@ -365,6 +365,15 @@ local prettierFmt = function()
   }
 end
 
+
+local rustFmt = function()
+  return {
+    exe = "rustfmt",
+    args = {"--emit=stdout"},
+    stdin = true
+  }
+end
+
 -- local eslintFmt = function()
 --   return {
 --       exe = "eslint_d",
@@ -376,13 +385,14 @@ end
 require('formatter').setup({
   logging = false,
   filetype = {
-      typescript = {prettierFmt}
+      typescript = {prettierFmt},
+      rust = {rustFmt}
   }
 })
 
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.ts FormatWrite
+  autocmd BufWritePost *.ts,*.rs FormatWrite
 augroup END
 ]], true)

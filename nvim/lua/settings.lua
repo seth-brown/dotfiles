@@ -28,19 +28,19 @@ utils.opt("o", "shiftround", true)                    -- move in multiples of sh
 utils.opt("o", "termguicolors", true)                 -- true color support
 utils.opt('o', "wildmode", "list:longest")            -- command-line completion mode
 utils.opt('o', "mouse", "a")                          -- allow mouse actions
+utils.opt("o", 'autochdir', true)                     -- change dirs to the file in the current buff
 
 vim.o.completeopt = "menuone,noselect"                -- required for nvim-compe completion
 vim.o.shortmess = vim.o.shortmess .. "c"
 
 -- set undofile
 -- set undodir=~/.vim/undo
--- scopes.b.undofile = true                              -- maintain undo history between sessions
+-- scopes.b.undofile = true                            -- maintain undo history between sessions
 cmd([[ set undofile]])
-cmd([[ set undodir=~/.local/share/nvim/undo/ ]])     -- set undo dir (required for mundo)
-cmd([[ set backupdir=~/.local/share/nvim/backup/ ]]) -- set backup dir
-cmd([[ set directory=~/.local/share/nvim/swap/ ]])   -- set swap dir
--- cmd([[set shortmess=atI]])                            -- skip intro message
-cmd([[set listchars=tab:▸\ ,eol:¬]])                  -- textmate-style tabstops/EOLs
+cmd([[ set undodir=~/.local/share/nvim/undo/ ]])       -- set undo dir (required for mundo)
+cmd([[ set backupdir=~/.local/share/nvim/backup/ ]])   -- set backup dir
+cmd([[ set directory=~/.local/share/nvim/swap/ ]])     -- set swap dir
+cmd([[set listchars=tab:▸\ ,eol:¬]])                   -- textmate-style tabstops/EOLs
 
 
 vim.o.shortmess = vim.o.shortmess .. "c"
