@@ -14,6 +14,8 @@ require('packer').startup(function()
   -- utils
   use 'phaazon/hop.nvim'
   use 'simnalamburt/vim-mundo'
+  use 'b3nj5m1n/kommentary' 
+  use 'mhartington/formatter.nvim'
 
   -- navigation
   use {'nvim-telescope/telescope.nvim', 
@@ -66,6 +68,10 @@ vim.cmd[[colorscheme tokyonight]]
 -- g.indent_blankline_show_trailing_blankline_indent = false
 g.indent_blankline_show_first_indent_level = false
 g.indentline_setColors = 0
+
+require('kommentary.config').configure_language("default", {
+    prefer_single_line_comments = true,
+})
 
 --nvim-compe
 require'compe'.setup {
@@ -350,3 +356,33 @@ require('lualine').setup{
   },
   extensions = { 'fzf' }
 }
+
+local prettierFmt = function()
+  return {
+    exe = "npx",
+    args = {"prettier", "--stdin-filepath", vim.api.nvim_buf_get_name(0)},
+    stdin = true
+  }
+end
+
+-- local eslintFmt = function()
+--   return {
+--       exe = "eslint_d",
+--       args = { '--stdin', '--stdin-filename', vim.api.nvim_buf_get_name(0), '--fix-to-stdout' },
+--       stdin = true
+--     }
+--   end
+
+require('formatter').setup({
+  logging = false,
+  filetype = {
+      typescript = {prettierFmt}
+  }
+})
+
+vim.api.nvim_exec([[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.ts FormatWrite
+augroup END
+]], true)
