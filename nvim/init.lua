@@ -41,7 +41,6 @@ require('packer').startup(function()
 
   -- color
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'norcalli/nvim-colorizer.lua'
   use 'folke/tokyonight.nvim'
 
   use {'hoob3rt/lualine.nvim',
