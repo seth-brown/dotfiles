@@ -9,7 +9,7 @@ utils.opt("b", "formatoptions", "crqnj")              -- automatic formatting op
 utils.opt("b", "shiftwidth", indent)                  -- size of an indent
 utils.opt("b", "textwidth", width)                    -- maximum width of text
 utils.opt("b", "tabstop", indent)                     -- number of spaces tabs count for
-utils.opt("b", 'smartindent', true)                   -- insert indents automatically
+-- utils.opt("b", 'smartindent', true)                   -- insert indents automatically
 
 -- utils.opt("w", "colorcolumn", tostring(width))        -- line length marker
 utils.opt("w", "list", false)                         -- do not show invisible characters by default

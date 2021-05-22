@@ -272,9 +272,6 @@ require'lspsaga'.init_lsp_saga{
     infor_sign = ""
 }
 
---colorizer
-require'colorizer'.setup()
-
 --telescope
 require('telescope').setup{
   defaults = {
@@ -373,25 +370,24 @@ local rustFmt = function()
   }
 end
 
--- local eslintFmt = function()
---   return {
---       exe = "eslint_d",
---       args = { '--stdin', '--stdin-filename', vim.api.nvim_buf_get_name(0), '--fix-to-stdout' },
---       stdin = true
---     }
---   end
-
 require('formatter').setup({
   logging = false,
   filetype = {
       typescript = {prettierFmt},
+      typescriptreact = {prettierFmt},
       rust = {rustFmt}
   }
 })
 
+vim.api.nvim_command([[
+  augroup TypescriptReact
+    autocmd bufnewfile,bufread *.tsx set filetype=typescriptreact
+  augroup END 
+]])
+
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.ts,*.rs FormatWrite
+  autocmd BufWritePost *.ts,*.tsx,*.rs FormatWrite
 augroup END
 ]], true)
