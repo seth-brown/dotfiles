@@ -173,13 +173,24 @@ require('gitsigns').setup {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--  vim.lsp.diagnostic.on_publish_diagnostics, {
+--     virtual_text = {
+--       prefix = "●", -- standard diagnostic icons (replaces the unseemly square)
+--     },
+--  }
+-- )
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
- vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = {
-      prefix = "●", -- standard diagnostic icons (replaces the unseemly square)
-    },
- }
+	vim.lsp.diagnostic.on_publish_diagnostics, {
+		virtual_text = false,
+		underline = true,
+		signs = true,
+	}
 )
+
+-- autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+-- autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()
 
 -- signature help
 require('lsp_signature').on_attach()
@@ -210,12 +221,17 @@ require('lspkind').init({
     },
 })
 
+-- local on_attach = function(client, bufnr)
+--   nvim_command('autocmd CursorHold <buffer> lua vim.lsp.util.show_line_diagnostics()')
+-- end
+
 --lsp isntaller
 local function setup_servers()
   require'lspinstall'.setup()
   local servers = require'lspinstall'.installed_servers()
   for _, server in pairs(servers) do
     require'lspconfig'[server].setup{}
+
   end
 end
 
@@ -250,7 +266,7 @@ require("trouble").setup {
         next = "j" -- next item
     },
     indent_lines = true, -- add an indent guide below the fold icons
-    auto_open = true, -- automatically open the list when you have diagnostics
+    auto_open = false, -- automatically open the list when you have diagnostics
     auto_close = true, -- automatically close the list when you have no diagnostics
     auto_preview = true, -- automatyically preview the location of the diagnostic. <esc> to close preview and go back to last window
     auto_fold = true, -- automatically fold a file trouble list at creation
