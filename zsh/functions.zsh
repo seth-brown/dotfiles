@@ -3,14 +3,25 @@ function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
+function test() {
+  DEFAULTVALUE="foo"
+  VAR=${1:-DEFAULTVALUE}
+  echo $VAR
+}
+
+# generate gif from mov
+# mov2gif FILE.mov
+# mov2gif FILE.mov 1080 15
 function mov2gif() {
-  out="$(echo $1 | sed 's/\.mov$/\.gif/')"
-  max_width="650"
-  frames_per_second="30"
-  ffmpeg -i $1 -vf "scale=min(iw\,$max_width):-1" -r "$frames_per_second" -sws_flags lanczos -f image2pipe -vcodec ppm - \
-    | convert -delay 5 -layers Optimize -loop 0 - "$out" &&
-  echo "$(tput setaf 2)output file: $out$(tput sgr 0)" &&
-  open -a Google\ Chrome $out
+  DEFAULT_WIDTH="650"
+  DEFAULT_FPS="30"
+  #
+  WIDTH=${2:-$DEFAULT_WIDTH}
+  FPS=${3:-$DEFAULT_FPS}
+  echo $WIDTH $FPS
+  OUT="$(echo $1 | sed 's/\.mov$/\.gif/')"
+  ffmpeg -i $1 -vf "scale=min(iw\,$WIDTH):-1" -r "$FPS" -sws_flags lanczos -f image2pipe -vcodec ppm - \
+    | convert -delay 5 -layers Optimize -loop 0 - "$OUT"
 }
 
 # PDF resolution can be set with -dPDFSETTINGS, e.g. -dPDFSETTINGS=/printer
