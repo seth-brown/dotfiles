@@ -13,6 +13,9 @@ source $HOME/.zsh/functions.zsh
 [[ "$(uname -s)" == "Darwin" ]] && source /usr/local/opt/fzf/shell/key-bindings.zsh
 [[ "$(uname -s)" == "Darwin" ]] && source /usr/local/opt/fzf/shell/completion.zsh
 
+# autocompletion
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # user scripts
 export PATH="$HOME/bin:$PATH"
 
