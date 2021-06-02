@@ -47,6 +47,9 @@ utils.map('n', '<leader>f', '<cmd>Telescope current_buffer_fuzzy_find<CR>')
 vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>",
   {silent = true, noremap = true}
 )
+vim.api.nvim_set_keymap("n", "<leader>xc", "<cmd>TroubleClose<cr>",
+  {silent = true, noremap = true}
+)
 vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble lsp_workspace_diagnostics<cr>",
   {silent = true, noremap = true}
 )
