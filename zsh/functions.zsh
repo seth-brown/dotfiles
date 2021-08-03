@@ -3,10 +3,12 @@ function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
-function test() {
-  DEFAULTVALUE="foo"
-  VAR=${1:-DEFAULTVALUE}
-  echo $VAR
+#  img-resize input.jpg output.jpg 4000
+function img-resize() {
+  DEFAULT_WIDTH="1000"
+  WIDTH=${3:-$DEFAULT_WIDTH}
+  # convert $1 -resize "600x" -unsharp 2x0.5+0.7+0 -quality 98 $2
+  convert $1 -resize "${WIDTH}x" -unsharp 2x0.5+0.7+0 -quality 98 $2
 }
 
 # generate gif from mov
