@@ -49,22 +49,11 @@ require('packer').startup(function()
 
 end)
 
---gui
-g.neovide_fullscreen = true
-g.neovide_cursor_vfx_mode = "pixiedust"
--- vim.api.nvim_exec([[set guifont=FiraCode\ Nerd\ Font:h12]], false)
-
 --theme
 g.tokyonight_italic_comments = true
 g.tokyonight_italic_keywords = true
 vim.cmd[[colorscheme tokyonight]]
 
-----indentline
--- g.indentLine_enabled = 1
--- g.indent_blankline_char = "｜"
---g.indent_blankline_filetype_exclude = {"help", "terminal", "dashboard"}
---g.indent_blankline_buftype_exclude = {"terminal"}
--- g.indent_blankline_show_trailing_blankline_indent = false
 g.indent_blankline_show_first_indent_level = false
 g.indentline_setColors = 0
 
@@ -110,7 +99,6 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
--- '∙',
 -- gitsigns
 require('gitsigns').setup {
  signs = {
@@ -152,34 +140,9 @@ require('gitsigns').setup {
   use_internal_diff = true,  -- If luajit is present
 }
 
--- vim.fn.sign_define(
---     "LspDiagnosticsSignError",
---     {texthl = "LspDiagnosticsSignError", text = "", numhl = "LspDiagnosticsSignError"}
--- )
--- vim.fn.sign_define(
---     "LspDiagnosticsSignWarning",
---     {texthl = "LspDiagnosticsSignWarning", text = "", numhl = "LspDiagnosticsSignWarning"}
--- )
--- vim.fn.sign_define(
---     "LspDiagnosticsSignHint",
---     {texthl = "LspDiagnosticsSignHint", text = "", numhl = "LspDiagnosticsSignHint"}
--- )
--- vim.fn.sign_define(
---     "LspDiagnosticsSignInformation",
---     {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
--- )
-
 -- Snippets support
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---  vim.lsp.diagnostic.on_publish_diagnostics, {
---     virtual_text = {
---       prefix = "●", -- standard diagnostic icons (replaces the unseemly square)
---     },
---  }
--- )
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -188,12 +151,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		signs = true,
 	}
 )
-
--- autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
--- autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()
-
--- signature help
-require('lsp_signature').on_attach()
 
 require('lspkind').init({
     with_text = true,
