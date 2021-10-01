@@ -36,7 +36,7 @@ require('packer').startup(function()
   use 'rafamadriz/friendly-snippets'
 
   -- asethetics
-  use {"lukas-reineke/indent-blankline.nvim", branch = "lua"}
+  use {"lukas-reineke/indent-blankline.nvim"}
   use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
 
   -- color
@@ -246,55 +246,55 @@ require'lspsaga'.init_lsp_saga{
 }
 
 --telescope
-require('telescope').setup{
-  defaults = {
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case'
-    },
-    prompt_position = "top",
-    prompt_prefix = " ",
-    selection_caret = " ",
-    entry_prefix = "  ",
-    initial_mode = "insert",
-    selection_strategy = "reset",
-    sorting_strategy = "ascending",
-    layout_strategy = "vertical",
-    layout_defaults = {
-      horizontal = {
-        mirror = false,
-      },
-      vertical = {
-        mirror = true,
-      },
-    },
-    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {},
-    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    shorten_path = true,
-    winblend = 0,
-    width = 0.75,
-    preview_cutoff = 120,
-    results_height = 1,
-    results_width = 0.8,
-    border = {},
-    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
-    color_devicons = true,
-    use_less = true,
-    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
-    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
-    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+-- require('telescope').setup{
+--   defaults = {
+--     vimgrep_arguments = {
+--       'rg',
+--       '--color=never',
+--       '--no-heading',
+--       '--with-filename',
+--       '--line-number',
+--       '--column',
+--       '--smart-case'
+--     },
+--     prompt_position = "top",
+--     prompt_prefix = " ",
+--     selection_caret = " ",
+--     entry_prefix = "  ",
+--     initial_mode = "insert",
+--     selection_strategy = "reset",
+--     sorting_strategy = "ascending",
+--     layout_strategy = "vertical",
+--     layout_defaults = {
+--       horizontal = {
+--         mirror = false,
+--       },
+--       vertical = {
+--         mirror = true,
+--       },
+--     },
+--     file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+--     file_ignore_patterns = {},
+--     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
+--     path_display = true,
+--     winblend = 0,
+--     width = 0.75,
+--     preview_cutoff = 120,
+--     results_height = 1,
+--     results_width = 0.8,
+--     border = {},
+--     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+--     color_devicons = true,
+--     use_less = true,
+--     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+--     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+--     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+--     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
 
-    -- Developer configurations: Not meant for general override
-    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
-  }
-}
+--     -- Developer configurations: Not meant for general override
+--     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+--   }
+-- }
 
 require('mappings')
 require('settings')
