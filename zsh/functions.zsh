@@ -26,6 +26,15 @@ function mov2gif() {
     | convert -delay 5 -layers Optimize -loop 0 - "$OUT"
 }
 
+
+# remove annotations from a PDF
+# pdfflatten output.pdf input.pdf
+function pdfflatten() {
+  gs -dSAFER -dBATCH -dNOPAUSE -dNOCACHE -sDEVICE=pdfwrite \
+     -dPreserveAnnots=false \
+     -sOutputFile="$@"
+}
+
 # PDF resolution can be set with -dPDFSETTINGS, e.g. -dPDFSETTINGS=/printer
 #
 # other resolution options:
