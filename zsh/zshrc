@@ -7,15 +7,6 @@ fi
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/functions.zsh
 
-# Source fzf keyboard cmds: control-t (search), etc.
-[[ "$(uname -s)" == "Linux" ]] && source /usr/share/fzf/key-bindings.zsh
-[[ "$(uname -s)" == "Linux" ]] && source /usr/share/fzf/completion.zsh
-[[ "$(uname -s)" == "Darwin" ]] && source /usr/local/opt/fzf/shell/key-bindings.zsh
-[[ "$(uname -s)" == "Darwin" ]] && source /usr/local/opt/fzf/shell/completion.zsh
-
-# autocompletion
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # user scripts
 export PATH="$HOME/bin:$PATH"
 
@@ -46,3 +37,10 @@ if [ -f $HOME/bin/google-cloud-sdk/completion.zsh.inc ]; then . $HOME/bin/google
 export CLOUDSDK_PYTHON=python2
 
 eval "$(zoxide init zsh)"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/sbrown/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
