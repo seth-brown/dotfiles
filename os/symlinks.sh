@@ -52,3 +52,8 @@ ln -sfn $CUR_DIR/js/eslintrc $HOME/.eslintrc
 
 # Rust
 ln -sfn $CUR_DIR/rs/rustfmt.toml $HOME/.config/rustfmt/rustfmt.toml
+
+# VS Code
+ln -s $CUR_DIR/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+ln -s $CUR_DIR/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+ln -s $CUR_DIR/vscode/snippets $HOME/Library/Application\ Support/Code/User/snippets

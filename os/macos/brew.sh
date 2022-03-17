@@ -45,4 +45,4 @@ brew install ${PACKAGES[@]}
 $(brew --prefix)/opt/fzf/install --all \
 
 # brew cask install hyper amethyst 
-brew install --cask kitty amethyst
+brew install --cask kitty amethyst vimr

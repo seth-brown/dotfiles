@@ -1,0 +1,3 @@
+code --install-extension bungcip.better-toml
+code --install-extension rust-lang.rust
+code --install-extension vscodevim.vim

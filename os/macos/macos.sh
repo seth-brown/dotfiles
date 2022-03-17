@@ -3,3 +3,6 @@
 # Set a blazingly fast keyboard repeat rate
 # defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # defaults write NSGlobalDomain KeyRepeat -int 2
+
+# Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
