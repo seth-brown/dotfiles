@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-#!/usr/bin/env sh
 
 # terminate when an error occurs
 set -o errexit
@@ -15,7 +14,7 @@ set -o xtrace
 # lsappinfo | grep 'bundleID="' | cut -d'"' -f2 | sort
 # osascript -e 'id of app "SomeApp"'
 
-EDITOR="com.qvacua.VimR"
+EDITOR="com.microsoft.VSCode"
 
 duti -s $EDITOR public.plain-text all
 duti -s $EDITOR public.unix-executable all
