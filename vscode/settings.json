@@ -1,4 +1,34 @@
 {
-    "workbench.colorTheme": "Monokai",
-    "editor.fontSize": 14
+  "workbench.colorTheme": "Monokai",
+  "editor.fontFamily": "'Operator Mono Lig', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "matklad.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.rustfmt.enableRangeFormatting": true,
+  "rust-analyzer.inlayHints.enable": false,
+  "rust-analyzer.inlayHints.chainingHints": false,
+  "rust-analyzer.inlayHints.parameterHints": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "spellright.configurationScope": "user",
+  "spellright.documentTypes": [ 
+    "markdown",
+    "latex",
+    "plaintext"
+  ]
 }
