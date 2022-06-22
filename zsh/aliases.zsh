@@ -28,6 +28,9 @@ alias tat='tmux attach -t'
 alias tks='tmux kill-session -t'
 alias tls='tmux ls'
 
+# text files short-cut
+alias txt="cd $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/txt"
+
 # list images
 type docker >/dev/null 2>&1 && alias dl="docker ps -a"
 
