@@ -3,8 +3,12 @@
   "editor.fontFamily": "'Operator Mono Lig', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
   "terminal.integrated.fontSize": 16,
+  "editor.renderWhitespace": "trailing",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
   "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -24,11 +28,13 @@
   "rust-analyzer.inlayHints.enable": false,
   "rust-analyzer.inlayHints.chainingHints": false,
   "rust-analyzer.inlayHints.parameterHints": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
   "security.workspace.trust.untrustedFiles": "open",
   "spellright.configurationScope": "user",
-  "spellright.documentTypes": [ 
-    "markdown",
-    "latex",
-    "plaintext"
-  ]
+  "spellright.documentTypes": ["markdown", "latex", "plaintext"]
 }
