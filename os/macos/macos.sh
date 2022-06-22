@@ -7,7 +7,6 @@
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
-
 # use command + control with click to drag a window a la linux (requires restart)
 # via https://www.mackungfu.org/UsabilityhackClickdraganywhereinmacOSwindowstomovethem
 defaults write -g NSWindowShouldDragOnGesture -bool true
