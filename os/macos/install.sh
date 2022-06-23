@@ -24,6 +24,6 @@ $SHELL $CUR_DIR/os/macos/duti.sh
 ########### MacOS symlinks ###########
 
 # VS Code
-ln -s $CUR_DIR/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
-ln -s $CUR_DIR/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
-ln -s $CUR_DIR/vscode/snippets $HOME/Library/Application\ Support/Code/User/snippets
+ln -s $CUR_DIR/vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+ln -s $CUR_DIR/vscode/keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"
+ln -s $CUR_DIR/vscode/snippets "$HOME/Library/Application Support/Code/User/snippets"
