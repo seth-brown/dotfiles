@@ -9,43 +9,44 @@ end
 
 --setup packer
 require('packer').startup(function()
-  use "wbthomason/packer.nvim"
 
-  -- utils
-  use 'phaazon/hop.nvim'
-  use 'simnalamburt/vim-mundo'
-  use 'b3nj5m1n/kommentary' 
-  use 'mhartington/formatter.nvim'
+  use 'wbthomason/packer.nvim'
 
-  -- navigation
-  use {'nvim-telescope/telescope.nvim', 
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
+  -- -- utils
+  -- use 'phaazon/hop.nvim'
+  -- use 'simnalamburt/vim-mundo'
+  -- use 'b3nj5m1n/kommentary' 
+  -- use 'mhartington/formatter.nvim'
 
-  -- completion
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-compe'
-  use 'onsails/lspkind-nvim'
-  use 'ray-x/lsp_signature.nvim'
-  use 'glepnir/lspsaga.nvim'
-  use 'folke/lsp-trouble.nvim'
-  use 'kabouzeid/nvim-lspinstall'
+  -- -- navigation
+  -- use {'nvim-telescope/telescope.nvim', 
+  --   requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
 
-  -- snippets
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ'
-  use 'rafamadriz/friendly-snippets'
+  -- -- completion
+  -- use 'neovim/nvim-lspconfig'
+  -- use 'hrsh7th/nvim-compe'
+  -- use 'onsails/lspkind-nvim'
+  -- use 'ray-x/lsp_signature.nvim'
+  -- use 'glepnir/lspsaga.nvim'
+  -- use 'folke/lsp-trouble.nvim'
+  -- use 'kabouzeid/nvim-lspinstall'
 
-  -- asethetics
-  use {"lukas-reineke/indent-blankline.nvim"}
-  use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
+  -- -- snippets
+  -- use 'hrsh7th/vim-vsnip'
+  -- use 'hrsh7th/vim-vsnip-integ'
+  -- use 'rafamadriz/friendly-snippets'
 
-  -- color
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'folke/tokyonight.nvim'
+  -- -- asethetics
+  -- use {"lukas-reineke/indent-blankline.nvim"}
+  -- use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
 
-  use {'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
+  -- -- color
+  -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  -- use 'folke/tokyonight.nvim'
+
+  -- use {'hoob3rt/lualine.nvim',
+  --   requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  -- }
 
 end)
 

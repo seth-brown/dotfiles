@@ -25,6 +25,12 @@ function mov2gif() {
     | convert -delay 5 -layers Optimize -loop 0 - "$OUT"
 }
 
+# generate mp4 from m3u8 files
+# m3u8_mp4 URL OUTFILE.mp4
+function m3u8_mp4() {
+  ffmpeg -i $1 -c:v copy -c:a copy -f mp4 $2
+}
+
 
 # remove annotations from a PDF
 # pdfflatten output.pdf input.pdf
