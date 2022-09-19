@@ -40,7 +40,7 @@ eval "$(zoxide init zsh)"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/sbrown/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/sbrown/.zprofile
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
