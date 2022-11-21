@@ -70,6 +70,7 @@
 
 [pull]
     rebase = true
+    default = current
 
 [credential]
     helper = osxkeychain
@@ -79,6 +80,7 @@
 
 [push]
     followTags = true
+    default = current
 
 [init]
     defaultBranch = main
