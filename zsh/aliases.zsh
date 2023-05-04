@@ -31,6 +31,9 @@ alias tls='tmux ls'
 # text files short-cut
 alias txt="cd $HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/txt"
 
+# lang
+alias yug="yarn upgrade-interactive --latest"
+
 # list images
 type docker >/dev/null 2>&1 && alias dl="docker ps -a"
 
