@@ -32,12 +32,17 @@
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
-    "editor.insertSpaces": true
+    "editor.insertSpaces": true,
+    "editor.formatOnType": true
   },
   "security.workspace.trust.untrustedFiles": "open",
   "spellright.configurationScope": "user",
   "spellright.documentTypes": ["markdown", "latex", "plaintext"],
   "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.parameterHints.enable": false,
-  "rust-analyzer.rustfmt.rangeFormatting.enable": true
+  "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+  "git.openRepositoryInParentFolders": "always",
+  "sort-imports.default-sort-style": "module-scoped",
+  "sort-imports.languages": ["javascript", "typescript"],
+  "sort-imports.on-save": false
 }
