@@ -1,3 +1,12 @@
+code --install-extension bradlc.vscode-tailwindcss
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension github.vscode-github-actions
+code --install-extension golang.go
+code --install-extension hashicorp.terraform
+code --install-extension jpsnee.vscode-editor-macros
+code --install-extension ms-vscode.makefile-tools
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension vscodevim.vim
 code --install-extension bungcip.better-toml
 code --install-extension rust-lang.rust
-code --install-extension vscodevim.vim

@@ -3,46 +3,38 @@
   "editor.fontFamily": "'Operator Mono Lig', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
   "terminal.integrated.fontSize": 16,
-  "editor.renderWhitespace": "trailing",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[markdown]": {
     "editor.formatOnSave": false
   },
-  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[rust]": {
-    "editor.defaultFormatter": "matklad.rust-analyzer",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "matklad.rust-analyzer"
   },
-  "rust-analyzer.checkOnSave.command": "clippy",
-  "rust-analyzer.inlayHints.enable": false,
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true,
     "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "editor.formatOnType": true
-  },
-  "security.workspace.trust.untrustedFiles": "open",
-  "spellright.configurationScope": "user",
-  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
-  "rust-analyzer.inlayHints.chainingHints.enable": false,
-  "rust-analyzer.inlayHints.parameterHints.enable": false,
-  "rust-analyzer.rustfmt.rangeFormatting.enable": true,
-  "git.openRepositoryInParentFolders": "always",
-  "sort-imports.default-sort-style": "module-scoped",
-  "sort-imports.languages": ["javascript", "typescript"],
-  "sort-imports.on-save": false
+    "editor.insertSpaces": true
+  }
 }
