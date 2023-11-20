@@ -29,12 +29,10 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[rust]": {
-    "editor.defaultFormatter": "matklad.rust-analyzer"
-  },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.tabSize": 4,
     "editor.insertSpaces": true
-  }
+  },
+  "git.ignoreMissingGitWarning": true
 }
