@@ -1,0 +1,101 @@
+live_config_reload = true
+# "windown.dynamic_title" = true
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[[colors.indexed_colors]]
+color = "0xff9e64"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xdb4b4b"
+index = 17
+
+[colors.bright]
+black = "0x1D202F"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xc0caf5"
+yellow = "0xe0af68"
+
+[colors.normal]
+black = "0x1D202F"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xa9b1d6"
+yellow = "0xe0af68"
+
+[colors.primary]
+background = "0x24283b"
+foreground = "0xc0caf5"
+
+[font]
+size = 18.0
+
+[font.bold]
+family = "Operator Mono Lig"
+style = "Book"
+
+[font.bold_italic]
+family = "Operator Mono Lig"
+style = "Book Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "Operator Mono Lig"
+style = "Light Italic"
+
+[font.normal]
+family = "Operator Mono Lig"
+style = "Light"
+
+[font.offset]
+x = 0
+y = 0
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+# [mouse.double_click]
+# threshold = 300
+
+# [mouse.hints]
+# modifiers = "Control"
+
+# [mouse.triple_click]
+# threshold = 300
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[window]
+decorations = "full"
+opacity = 0.92
+
+[window.dimensions]
+columns = 80
+lines = 25
+
+[window.padding]
+x = 2
+y = 2
